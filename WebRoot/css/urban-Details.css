@@ -1,0 +1,132 @@
+/*图标*/
+.icon-id{
+    display: inline-block;
+    background: url(../images/icon-id.png) center no-repeat;
+    background-size: 12px 12px;
+    height: 12px;
+    width: 12px;
+}
+
+.icon-place{
+    display: inline-block;
+    background: url(../images/icon-place.png) center no-repeat;
+    background-size: 12px 12px;
+    height: 12px;
+    width: 12px;
+}
+.icon-bus{
+    display: inline-block;
+    background: url(../images/icon-bus.png) center no-repeat;
+    background-size: 12px 12px;
+    height: 12px;
+    width: 12px;
+}
+/*主题标题*/
+.main-head{
+    padding-top: 20px;
+}
+.main-head  .title{
+    color: #fda913;
+}
+.main-head span{
+    float: right;
+    color: #9e9e9e;
+}
+.main-head  .star{
+    display: block;
+    background: url(../images/star-5.png) no-repeat center;
+    background-size: 60px 10px;
+    height: 16px;
+    width: 80px;
+}
+.main-detail{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.main-review{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.main-review p{
+    padding-bottom: 5px;
+}
+.main-review  .star{
+    background: url(../images/star-5.png) no-repeat center;
+    background-size: 60px 10px;
+    height: 16px;
+    width: 80px;
+    float: left;
+}
+.main-review p b{
+    float: left;
+    height: 16px;
+    line-height: 16px;
+}
+.main-review .txt{
+    display: inline-block;
+    width: 50%;
+    height: 16px;
+    line-height: 16px;
+}
+.main-review .more{
+    float: right;
+}
+/*按钮*/
+.main-btn{
+    padding-top: 8%;
+    padding-bottom:8%;
+}
+.main-btn div{
+    width: 90%;
+    margin: 0 auto;
+}
+.main-btn .yd-btn{
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    width:80%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+    background: #97cc18;
+}
+.main-btn .call-btn{
+    float: left;
+    display: block;
+    border-radius: 5px;
+    width:45%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+    background: #ffa810;
+}
+.main-btn .gh-btn{
+    float: right;
+    display: block;
+    border-radius: 5px;
+    width:45%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+    background: #019fe8;
+}
+.call-btn span{
+    display:inline-block;
+    background: url(../images/icon-call.png) no-repeat center;
+    background-size: 20px 14px;
+    width: 30px;
+    height: 14px;
+}
+.gh-btn span{
+    display:inline-block;
+    background: url(../images/icon-nav.png) no-repeat center;
+    background-size: 20px 16px;
+    width: 30px;
+    height: 16px;
+}

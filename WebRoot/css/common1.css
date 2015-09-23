@@ -1,0 +1,30 @@
+body{
+    background: #eeeef0;
+}
+.main{
+     background: #fff;
+ }
+.top-bar{
+    position: relative;
+    height: 60px;
+    background: #1b95d4;
+    color: #fff;
+}
+.top-bar h3{
+    font-size: 1.3rem;
+    line-height: 60px;
+    text-align: center;
+}
+.top-bar-rebtn{
+    position: absolute;
+    width: 43px;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+    background: url(../images/icon-rebtn.png) no-repeat center;
+    background-size: 11px 17px;
+}
+/*焦点轮播*/
+.slider{display:none}/*用于获取更加体验*/
+.focus span{width:10px;height:10px;margin-right:10px;border-radius:50%;background:#666;font-size:0}
+.focus span.current{background:#fff}

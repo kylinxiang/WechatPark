@@ -1,0 +1,80 @@
+@charset 'utf-8';
+body{background-color:#efefef}
+input[type=text],input[type=password],input[type=tel],input[type=number]{
+	padding:0 30px 0 0;
+	line-height:normal}
+.cui-tab-mod{
+	background-color:transparent
+	}
+.login_tab{
+	position:relative;
+	height:44px;
+	line-height:44px;
+	font-size:15px;
+	color:#666;
+	background-color:transparent
+	}
+.login_tab span{
+	float:left;
+	width:50%;
+	text-align:center
+	}
+.login_tab .current{color:#099fde}
+.login_tab i{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:50%;
+	height:4px;
+	background-color:#099fde;
+	-webkit-transition:-webkit-transform 300ms ease-in-out;
+	-ms-transition:-ms-transform 300ms ease-in-out;
+	transition:transform 300ms ease-in-out}
+.login_tab span:nth-of-type(1).current+span+i{
+	-webkit-transform:translate(0,0);
+	-ms-transform:translate(0,0);
+	transform:translate(0,0)
+	}
+.login_tab span:nth-of-type(2).current+i{
+	-webkit-transform:translate(100%,0);
+	-ms-transform:translate(100%,0);
+	transform:translate(100%,0)
+	}
+.login_box{
+	padding-left:15px;
+	font-size:15px;
+	border-top:1px solid #bcbcbc;
+	border-bottom:1px solid #bcbcbc;
+	background-color:#fff}
+.login_box li{
+	position:relative;
+	border-top:1px solid #bcbcbc}
+.login_box li:first-child{
+	border-top:0 none
+	}
+.login_box li label{
+	float:left;
+	width:80px;
+	height:44px;
+	line-height:44px
+	}
+.login_box li>div{
+	position:relative;
+	height:44px;
+	margin:0 10px 0 80px
+	}
+.login_box+div{margin:10px 15px 0}
+.login_box+div a{
+	float:right;
+	color:#099fde
+	}
+.login_box li img{
+	position:absolute;
+	top:50%;
+	right:0;
+	-webkit-transform:translate(100%,-50%);
+	-ms-transform:translate(100%,-50%);
+	transform:translate(100%,-50%)}
+
+
+

@@ -1,0 +1,45 @@
+/*¼ÆÊ±Æ÷*/
+.main{
+    width: 96%;
+    margin: 5px auto;
+    background: #fff;
+    padding: 5px;
+    text-align: center;
+}
+.main .stop-btn{
+    display: block;
+    margin: 20px auto;
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 5px;
+    background: #c1c1c1;
+    color: #fff;
+}
+/*ÅÄÕÕ¼ÇÂ¼*/
+.main .photo{
+    width: 96%;
+    margin: 5px auto;
+    height: 220px;
+    border: 1px solid #b9b9b9;
+    text-align: center;
+    position: relative;
+}
+.main .photo .box{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 70px;
+    width: 84px;
+}
+.photo .box .photo-btn{
+    display: block;
+    background: url(../images/icon--camera.png)center no-repeat;
+    background-size: 64px 42px;
+    width: 64px;
+    height: 42px;
+    margin:0 auto 10px;
+}

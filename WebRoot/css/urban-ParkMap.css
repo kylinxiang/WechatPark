@@ -1,0 +1,239 @@
+/*common*/
+.top-bar{
+    position: relative;
+    height:10%;
+    background: #009fe8;
+    color: #fff;
+}
+.top-bar h3{
+    font-size: 2rem;
+    line-height: 250%;
+    text-align: center;
+}
+.top-bar-rebtn {
+    position: absolute;
+    width: 33px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: url(../images/icon-rebtn.png) no-repeat center;
+    background-size: 11px 17px;
+}
+/*搜索框样式*/
+.main-search{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #b9b9b9;
+    z-index: 5;
+    background: #fff;
+}
+.search-box{
+    position: relative;
+    width: 90%;
+    height: 33px;
+    margin: 10px auto;
+}
+.search-box select{
+    border: none;
+    border-radius: 5px;
+    height: 33px;
+    width:20%;
+    background: #009fe8;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.search-box select option{
+    width:20%;
+}
+.search-box .search-txt{
+    position: relative;
+    color: #707070;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    float: right;
+    height: 33px;
+    width: 75%;
+}
+.search-txt input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    height: 33px;
+    width: 80%;
+}
+.search-txt .search-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 33px;
+    width: 20%;
+    background: url(../images/icon-search.png) center no-repeat;
+    background-size: 15px 15px;
+}
+/*搜索列表*/
+.search-list{
+    position: relative;
+    width: 94%;
+    margin: 5px auto;
+    overflow: hidden;
+    display: none;
+}
+.search-list .item{
+    position: relative;
+    float: left;
+    display: block;
+    width:20%;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #595757;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/*地图*/
+.main-map{
+    position: relative;
+    display: block;
+    width: 100%;
+    -webkit-box-sizing:border-box;
+    height: 90%;
+    background: #f8f7f5;
+}
+/*地图提示*/
+.map-tip{
+    position: absolute;
+    top: 180px;
+    left: 4%;
+    width: 36px;
+    background: #fff;
+    padding: 4px;
+    z-index: 5;
+}
+.map-tip label{
+    display: block;
+    font-size: .8rem;
+    text-align: center;
+    width: 36px;
+    color: #595757;
+}
+.tip-b{
+    display: block;
+    background: url(../images/icon-b-focus.png) center no-repeat;
+    background-size: 15px 18px;
+    width: 36px;
+    height: 22px;
+}
+.tip-g{
+    display: block;
+    background: url(../images/icon-g-focus.png) center no-repeat;
+    background-size: 15px 18px;
+    width: 36px;
+    height: 22px;
+}
+/*地图操作*/
+.map-icon{
+    position: absolute;
+    bottom: 100px;
+    left: 4%;
+    z-index: 5;
+
+}
+.icon{
+    display: block;
+    width: 35px;
+    padding: 4px;
+    background: #fff;
+    border: 1px solid #b9b9b9;
+    margin-top: 10px;
+
+}
+.map-icon label{
+    display: block;
+    font-size: .8rem;
+    text-align: center;
+    width: 100%;
+    -webkit-box-sizing:border-box;
+     color: #595757;
+}
+ .icon-add{
+    display: block;
+    background: url(../images/icon-add.png) center no-repeat;
+    background-size: 15px 18px;
+    -webkit-box-sizing:border-box;
+    width: 100%;
+    height: 22px;
+}
+ .icon-time{
+    display: block;
+    background: url(../images/icon-time.png) center no-repeat;
+    background-size: 15px 18px;
+    width: 100%;
+    height: 22px;
+}
+/*百度地图APi*/
+.BMap_cpyCtrl
+{
+    display:none;
+}
+.anchorBL{
+    display:none;
+}
+/*车场信息*/
+.map-park-yd{
+    position: absolute;
+    width: 92%;
+    height: 64px;
+    bottom:4%;
+    left: 4%;
+    background: #fff;
+    border: 1px solid #b9b9b9;
+    -webkit-box-sizing:border-box
+}
+.park-box{
+    width: 100%;
+    height: 56px;
+    margin-top: 4px;
+    color: #717071;
+}
+.park-box i{
+    display:block;
+    float: left;
+    background: url(../images/icon-g-park.png) center no-repeat;
+    background-size: 46px 46px;
+    width: 66px;
+    height: 56px;
+    border-right: 1px solid #b9b9b9;
+}
+.park-box .box-txt{
+    position: absolute;
+    left: 70px;
+    top: 5px;
+    margin-left: 5px;
+}
+.park-box .btn{
+    display: block;
+    width: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+.btn .yd-btn{
+    display: block;
+    height: 26px;
+    width: 90px;
+    line-height: 26px;
+    border-radius: 5px;
+    background: #97cc17;
+    text-align: center;
+    color: #fff;
+    margin: 5px auto;
+}
+.btn span{
+    font-size: .6rem;
+    color: #878787;
+}
