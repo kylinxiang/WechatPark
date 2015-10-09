@@ -8,9 +8,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>提交反馈</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common1.css" type="text/css">
-    <link rel="stylesheet" href="css/feedback.css" type="text/css">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common1.css" type="text/css">
+    <link rel="stylesheet" href="../css/feedback.css" type="text/css">
 </head>
 <body>
 <div class="top-bar">

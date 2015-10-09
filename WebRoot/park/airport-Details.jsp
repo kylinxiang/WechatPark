@@ -11,10 +11,10 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common2.css" type="text/css">
-    <link rel="stylesheet" href="css/new-parkList.css" type="text/css">
-    <script src="js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common2.css" type="text/css">
+    <link rel="stylesheet" href="../css/new-parkList.css" type="text/css">
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 <!--响应式父容器-->
@@ -23,7 +23,7 @@
     <div class="top-bar">
         <a href="javascript:history.back()" class="top-bar-rebtn"></a>
         <h3>停车场信息</h3>
-        <a href="airport-parklist.jsp" class="login-font">列表</a>
+        <a href="park/airport-parklist.jsp" class="login-font">列表</a>
     </div>
     <!--焦点轮播-->
     <div class="main-focus" style="background: #f7f7f7;width:100%;height: 458px;">
@@ -79,7 +79,7 @@
     </div>
 </div>
 </body>
-<script src="js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
 <!--<script src="js/jquery.mobile-1.3.2.min.js"></script>-->
 <!--获取实际宽度得到缩放比-->
 <script type="text/javascript">

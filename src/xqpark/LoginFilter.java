@@ -50,13 +50,14 @@ public class LoginFilter implements Filter {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
+		
 		HttpServletRequest servletRequest = (HttpServletRequest) request;
 		HttpServletResponse servletResponse = (HttpServletResponse) response;	
         //HttpSession session = servletRequest.getSession();
         
          String path = servletRequest.getRequestURI();
-         Object sessionObj = servletRequest.getSession().getAttribute(sessionKey);
-         //System.out.println(path);
+         String sessionObj = (String) servletRequest.getSession().getAttribute("sessionKey");
+         System.out.println(sessionObj);
          
          //String username =  (String)session.getAttribute("username");
          //Boolean isLogin = (Boolean) session.getAttribute("isLogin");
@@ -66,8 +67,10 @@ public class LoginFilter implements Filter {
              return;
          } 
          if(sessionObj == null) {
+        	 servletRequest.getSession().setAttribute("goUrl",path);
+        	 System.out.println(path);
         	 servletResponse.sendRedirect("/ParkWechat/login.jsp");
-         }else if(sessionObj == "success") {
+         }else if(sessionObj.equals("success")){
         	 chain.doFilter(request, response);
          }
     }

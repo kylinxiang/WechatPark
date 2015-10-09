@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		String goUrl = "";
 		JSONObject jsonobj = null,info = null;
 		long userid=0,registertime=0;
 		int usertype=0,sex=0,ifexamine=0;
@@ -66,18 +66,22 @@ public class LoginServlet extends HttpServlet {
 			{
 				info = jsonobj.getJSONObject("info");
 	        	
-	        	ifexamine = jsonobj.getInt("ifexamine");
-	        	userid = info.getLong("userid");
-	        	registertime = info.getLong("registertime");   	
-	        	usertype = info.getInt("usertype");
-	        	blance = (float) info.getDouble("blance");
-	        	headurl = info.getString("headurl");
+	        	//ifexamine = jsonobj.getInt("ifexamine");
+	        	//userid = info.getLong("userid");
+	        	//registertime = info.getLong("registertime");   	
+	        	//usertype = info.getInt("usertype");
+	        	//blance = (float) info.getDouble("blance");
+	        	//headurl = info.getString("headurl");
+				
+				goUrl = (String) request.getSession().getAttribute("goUrl");
 	        	
 				request.getSession().setAttribute("sessionKey", "success");
-				
+	
 				request.getSession().setAttribute("username", username);
-				request.getSession().setAttribute("userid", userid);	
-			    response.sendRedirect("/ParkWechat/TestInfo.jsp");  
+				request.getSession().setAttribute("userid", userid);
+				
+				System.out.println("跳转开始:"+goUrl);
+			    response.sendRedirect(goUrl);  
 				return;
 			}else{
 				response.sendRedirect("/ParkWechat/login.jsp");

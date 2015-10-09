@@ -8,16 +8,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>小强停车</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common1.css" type="text/css">
-    <link rel="stylesheet" href="css/parking-Time.css" type="text/css">
-    <link rel="stylesheet" href="css/TimeCircles.css" type="text/css" >
-    <script src="js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common1.css" type="text/css">
+    <link rel="stylesheet" href="../css/parking-Time.css" type="text/css">
+    <link rel="stylesheet" href="../css/TimeCircles.css" type="text/css" >
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 <!--页面头部信息-->
     <div class="top-bar">
-    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <a href="park/urban-ParkMap.jsp" class="top-bar-rebtn"></a>
     <h3>小强停车</h3>
 </div>
 <!--计时器-->
@@ -33,13 +33,13 @@
         <div class="photo">
           <div class="box">
               <a class="photo-btn"></a>
-              <input class="photo-btn" style="filter:alpha(opacity:0);opacity: 0; z-index: 10;margin-top: -54px " type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput">
+              <input class="photo-btn" style="filter:alpha(opacity:0);opacity: 0; z-index: 10;margin-top: -54px " type="file" capture="camera" accept="../image/*" id="cameraInput" name="cameraInput">
               <p>拍照记录车位</p>
           </div>
         </div>
     </div>
 <!--计时器插件-->
-<script src="js/TimeCircles.js" type="text/javascript"></script>
+<script src="../js/TimeCircles.js" type="text/javascript"></script>
 <script>
     $(function(){
         $('#someTimer3').TimeCircles({

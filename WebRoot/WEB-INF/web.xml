@@ -13,7 +13,7 @@
 </filter>
 <filter-mapping>
 	<filter-name>LoginFilter</filter-name>
-	<url-pattern>/park/xx/*</url-pattern>
+	<url-pattern>/park/*</url-pattern>
 </filter-mapping>
   
   <servlet>

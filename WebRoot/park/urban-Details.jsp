@@ -8,15 +8,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>停车场预订</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common1.css" type="text/css">
-    <link rel="stylesheet" href="css/urban-Details.css" type="text/css">
-    <script src="js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common1.css" type="text/css">
+    <link rel="stylesheet" href="../css/urban-Details.css" type="text/css">
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 <!--头部信息-->
 <div class="top-bar">
-    <a href="urban-ParkMap.html" class="top-bar-rebtn"></a>
+    <a href="park/urban-ParkMap.html" class="top-bar-rebtn"></a>
     <h3>停车场详情</h3>
 </div>
 <div class="main">
@@ -24,13 +24,13 @@
     <div class="main-focus">
         <div class="slider">
             <ul>
-                <li><a href="" target="_blank"><img src="images/1.jpg" alt=""></a></li>
-                <li><a href="" target="_blank"><img src="images/2.jpg" alt=""></a></li>
-                <li><a href="" target="_blank"><img src="images/3.jpg" alt=""></a></li>
-                <li><a href="" target="_blank"><img src="images/4.jpg" alt=""></a></li>
+                <li><a href="" target="_blank"><img src="../images/1.jpg" alt=""></a></li>
+                <li><a href="" target="_blank"><img src="../images/2.jpg" alt=""></a></li>
+                <li><a href="" target="_blank"><img src="../images/3.jpg" alt=""></a></li>
+                <li><a href="" target="_blank"><img src="../images/4.jpg" alt=""></a></li>
             </ul>
         </div>
-        <script type="text/javascript" src="js/yxMobileSlider.js"></script>
+        <script type="text/javascript" src="../js/yxMobileSlider.js"></script>
         <script>
             $(".slider").yxMobileSlider({width:320,height:200,during:3000})
         </script>
@@ -58,7 +58,7 @@
 <!--操作按钮-->
 <div class="main-btn clearfix">
     <div>
-        <a href="order-Confirm.jsp" class="yd-btn"><span></span>立即预订</a>
+        <a href="park/order-Confirm.jsp" class="yd-btn"><span></span>立即预订</a>
     </div>
 </div>
 </body>

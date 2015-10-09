@@ -11,10 +11,10 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common2.css" type="text/css">
-    <link rel="stylesheet" href="css/my-collection.css" type="text/css">
-    <script src="js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common2.css" type="text/css">
+    <link rel="stylesheet" href="../css/my-collection.css" type="text/css">
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 <!--响应式父容器-->
@@ -36,7 +36,7 @@
                 <p class="text-nowrap">收费：1天50，2天80，3天100，4天200</p>
             </div>
             <div class="box-btn">
-                <img src="images/icon-no-photo.png">
+                <img src="../images/icon-no-photo.png">
                 <a class="yd-btn">立即预定</a>
             </div>
         </li>
@@ -51,7 +51,7 @@
                 <p class="text-nowrap">收费：1天50，2天80，3天100，4天200</p>
             </div>
             <div class="box-btn">
-                <img src="images/icon-no-photo.png">
+                <img src="../images/icon-no-photo.png">
                 <a class="yd-btn">立即预定</a>
             </div>
         </li>
@@ -66,14 +66,14 @@
                 <p class="text-nowrap">收费：1天50，2天80，3天100，4天200</p>
             </div>
             <div class="box-btn">
-                <img src="images/icon-no-photo.png">
+                <img src="../images/icon-no-photo.png">
                 <a class="yd-btn">立即预定</a>
             </div>
         </li>
     </ul>
 </div>
 </body>
-<script src="js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
 <!--<script src="js/jquery.mobile-1.3.2.min.js"></script>-->
 <!--获取实际宽度得到缩放比-->
 <script type="text/javascript">

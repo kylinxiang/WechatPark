@@ -8,9 +8,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>我的钱包</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common1.css" type="text/css">
-    <link rel="stylesheet" href="css/my-wallet.css" type="text/css">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common1.css" type="text/css">
+    <link rel="stylesheet" href="../css/my-wallet.css" type="text/css">
 </head>
 <body>
 <!--页面头部-->
@@ -22,7 +22,7 @@
 <!--余额信息-->
 <div class="sy-money">
     <div class="money-box clearfix">
-        <img src="images/icon-wallet-cost.png">
+        <img src="../images/icon-wallet-cost.png">
         <p>现金金额</p>
         <span>0.00元</span>
     </div>
@@ -31,7 +31,7 @@
 <div class="yhj">
     <!--优惠卷数量-->
     <div class="yhj-header">
-        <img src="images/icon-wallet-logo.png">
+        <img src="../images/icon-wallet-logo.png">
         <h2>小强停车场优惠卷</h2>
         <span>2张</span>
     </div>
@@ -41,7 +41,7 @@
             <li class="font-g">
                 <div class="img-center">
                     <span>
-                        <img src="images/icon-wallet-logo-g.png">
+                        <img src="../images/icon-wallet-logo-g.png">
                     </span>
                 </div>
                 <div class="box">
@@ -56,7 +56,7 @@
             <li class="font-b">
                 <div class="img-center">
                     <span>
-                        <img src="images/icon-wallet-logo-b.png">
+                        <img src="../images/icon-wallet-logo-b.png">
                     </span>
                 </div>
                 <div class="box">

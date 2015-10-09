@@ -62,13 +62,13 @@ public class WechatMenu {
 	  */
 	    public static String createMenu() {
 	      String menu = "{\"button\":"
-	      		+ "[{\"type\":\"view\",\"name\":\"预定车位\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/urban-ParkMap.jsp\"},"
+	      		+ "[{\"type\":\"view\",\"name\":\"预定车位\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/park/urban-ParkMap.jsp\"},"
 	      		+ "	{\"type\":\"click\",\"name\":\"操作指南\",\"key\":\"GUIDE\"},"
 	      		+ "{\"name\":\"个人信息\",\"sub_button\":"
-	      		+  "[{\"type\":\"view\",\"name\":\"我的订单\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/my-Details.jsp\"},"
-	      		+   "{\"type\":\"view\",\"name\":\"我的钱包\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/my-wallet.jsp\"},"
-	      		+   "{\"type\":\"view\",\"name\":\"我的收藏\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/my-collection.jsp\"},"
-	      		+ 	"{\"type\":\"view\",\"name\":\"个人信息\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/personal.jsp\"},"
+	      		+  "[{\"type\":\"view\",\"name\":\"我的订单\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/park/my-Details.jsp\"},"
+	      		+   "{\"type\":\"view\",\"name\":\"我的钱包\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/park/my-wallet.jsp\"},"
+	      		+   "{\"type\":\"view\",\"name\":\"我的收藏\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/park/my-collection.jsp\"},"
+	      		+ 	"{\"type\":\"view\",\"name\":\"个人信息\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/park/personal.jsp\"},"
 	      		+ 	"{\"type\":\"view\",\"name\":\"修改密码\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/forget-pw.jsp\"}]}]}";
 
 	        String access_token= getAccess_token();
@@ -81,11 +81,11 @@ public class WechatMenu {
 	           http.setRequestProperty("Content-Type","application/x-www-form-urlencoded");    
 	           http.setDoOutput(true);        
 	           http.setDoInput(true);
-	           System.setProperty("sun.net.client.defaultConnectTimeout", "30000");//���ӳ�ʱ30��
-	           System.setProperty("sun.net.client.defaultReadTimeout", "30000"); //��ȡ��ʱ30��
+	           System.setProperty("sun.net.client.defaultConnectTimeout", "30000");
+	           System.setProperty("sun.net.client.defaultReadTimeout", "30000"); 
 	           http.connect();
 	           OutputStream os= http.getOutputStream();    
-	           os.write(menu.getBytes("UTF-8"));//�������    
+	           os.write(menu.getBytes("UTF-8"));
 	           os.flush();
 	           os.close();
 
@@ -135,7 +135,7 @@ public class WechatMenu {
 	          byte[] jsonBytes =new byte[size];
 	          is.read(jsonBytes);
 	          String message=new String(jsonBytes,"UTF-8");
-	          return "deleteMenu������Ϣ:"+message;
+	          return "deleteMenu:"+message;
 	          } catch (MalformedURLException e) {
 	              e.printStackTrace();
 	          } catch (IOException e) {

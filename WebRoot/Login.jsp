@@ -17,7 +17,7 @@
 <body>
 <!--页面头部-->
 <div class="top-bar">
-    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <a href="park/urban-ParkMap.jsp" class="top-bar-rebtn"></a>
     <h3>登录</h3>
     <a href="register.jsp" class="login-font">注册</a>
 </div>

@@ -8,27 +8,27 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>订单确认</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common1.css" type="text/css">
-    <link rel="stylesheet" href="css/order-Confirm.css" type="text/css">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common1.css" type="text/css">
+    <link rel="stylesheet" href="../css/order-Confirm.css" type="text/css">
     
     <!--日期插件-->
-	<script src="dev/js/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
-	<script src="dev/js/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
+	<script src="../dev/js/mobiscroll.core-2.5.2.js" type="text/javascript"></script>
+	<script src="../dev/js/mobiscroll.core-2.5.2-zh.js" type="text/javascript"></script>
+	<script src="../dev/js/mobiscroll.datetime-2.5.1.js" type="text/javascript"></script>
+	<script src="../dev/js/mobiscroll.datetime-2.5.1-zh.js" type="text/javascript"></script>
+	<script src="../dev/js/mobiscroll.android-ics-2.5.2.js" type="text/javascript"></script>
     
-    <link href="dev/css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
-	<link href="dev/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css" />
-	<link href="dev/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
+    <link href="../dev/css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+	<link href="../dev/css/mobiscroll.animation-2.5.2.css" rel="stylesheet" type="text/css" />
+	<link href="../dev/css/mobiscroll.android-ics-2.5.2.css" rel="stylesheet" type="text/css" />
 	
-    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 <!--页面头部-->
 <div class="top-bar">
-    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <a href="park/urban-ParkMap.jsp" class="top-bar-rebtn"></a>
     <h3>订单确认</h3>
     <a href="" class="top-call-back"></a>
 </div>
@@ -82,7 +82,7 @@
     </div>
 
 <div class="btn">
-    <a href="order-Details.jsp" class="query-btn" onclick="formsubmit()">确定</a>
+    <a href="park/order-Details.jsp" class="query-btn" onclick="formsubmit()">确定</a>
 </div>
 
 

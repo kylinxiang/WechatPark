@@ -8,10 +8,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>评价详情</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common2.css" type="text/css">
-    <link rel="stylesheet" href="css/airport-review.css" type="text/css">
-    <script src="js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common2.css" type="text/css">
+    <link rel="stylesheet" href="../css/airport-review.css" type="text/css">
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="wrapper" class="wrapper">
@@ -24,7 +24,7 @@
     <div>
         <ul>
             <li class="details-box">
-                <img src="images/per_icon.png" class="box-photo">
+                <img src="../images/per_icon.png" class="box-photo">
                 <div class="box-txt">
                     <div><p class="h3" style="display: inline-block">王龙龙</p><i class="icon-star-4"  style="margin: -4px;"></i></div>
                     <p class="text-nowrap">服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好</p>
@@ -32,7 +32,7 @@
                 <div class="box-time">2015-06.06</div>
             </li>
             <li class="details-box">
-                <img src="images/per_icon.png" class="box-photo">
+                <img src="../images/per_icon.png" class="box-photo">
                 <div class="box-txt">
                     <div><p class="h3" style="display: inline-block">王龙龙</p><i class="icon-star-4"  style="margin: -4px;"></i></div>
                     <p class="text-nowrap">服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好</p>
@@ -40,14 +40,14 @@
                 <div class="box-time">2015-06.06</div>
             </li>
             <li class="details-box">
-                <img src="images/per_icon.png" class="box-photo">
+                <img src="../images/per_icon.png" class="box-photo">
                 <div class="box-txt">
                     <div><p class="h3" style="display: inline-block">王龙龙</p><i class="icon-star-4"  style="margin: -4px;"></i></div>
                     <p class="text-nowrap">服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好</p>
                 </div>
                 <div class="box-time">2015-06.06</div>
             </li><li class="details-box">
-            <img src="images/per_icon.png" class="box-photo">
+            <img src="../images/per_icon.png" class="box-photo">
             <div class="box-txt">
                 <div><p class="h3" style="display: inline-block">王龙龙</p><i class="icon-star-4"  style="margin: -4px;"></i></div>
                 <p class="text-nowrap">服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好</p>
@@ -55,7 +55,7 @@
             <div class="box-time">2015-06.06</div>
         </li>
             <li class="details-box">
-                <img src="images/per_icon.png" class="box-photo">
+                <img src="../images/per_icon.png" class="box-photo">
                 <div class="box-txt">
                     <div><p class="h3" style="display: inline-block">王龙龙</p><i class="icon-star-4"  style="margin: -4px;"></i></div>
                     <p class="text-nowrap">服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好服务好</p>
@@ -74,7 +74,7 @@
         $("li:even").css("background-color","#fff");
     })
 </script>
-<script src="js/jquery-1.8.3.min.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
 <!--<script src="js/jquery.mobile-1.3.2.min.js"></script>-->
 <!--获取实际宽度得到缩放比-->
 <script type="text/javascript">

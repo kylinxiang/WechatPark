@@ -8,14 +8,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>小强停车</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/urban-ParkMap.css" type="text/css">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/urban-ParkMap.css" type="text/css">
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
 </head>
 <body>
     <!--页面头部信息-->
     <div class="top-bar">
-        <a href="index.jsp" class="top-bar-rebtn"></a>
+        <a href="../index.jsp" class="top-bar-rebtn"></a>
         <h3>小强停车</h3>
     </div>
     <!--地点信息搜索-->
@@ -61,7 +61,7 @@
             <i class="icon-add"></i>
             <label>添加</label>
         </a>
-        <a href="parking-Time.jsp" class="icon">
+        <a href="park/parking-Time.jsp" class="icon">
             <i class="icon-time"></i>
             <label>计时</label>
         </a>
@@ -76,7 +76,7 @@
                 <p>车位状态：可预订</p>
             </div>
            <div class="btn">
-               <a href="urban-Details.jsp" class="yd-btn">立即预订</a>
+               <a href="park/urban-Details.jsp" class="yd-btn">立即预订</a>
                <span>(需支付定金)</span>
            </div>
         </div>
@@ -85,7 +85,7 @@
     <div  class="map-park-noyd"  >
         <div class="park-box">
             <i class="icon-b-park"></i>
-            <a href="urban-Details-No.jsp" class="box-txt">
+            <a href="park/urban-Details-No.jsp" class="box-txt">
                 <p>杭州市万塘路停车场</p>
                 <p>10元/小时，1000米</p>
                 <p>车位状态：请联系停车场</p>
@@ -102,7 +102,7 @@
         </div>
     </div>
     <!--引入JQ-->
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
     <!--地图API接入-->
     <script type="text/javascript">
         var map = new BMap.Map("container");

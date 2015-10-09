@@ -8,9 +8,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>个人信息</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common1.css" type="text/css">
-    <link rel="stylesheet" href="css/personnal.css" type="text/css">
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common1.css" type="text/css">
+    <link rel="stylesheet" href="../css/personnal.css" type="text/css">
 </head>
 <body>
 <!--页面头部-->
@@ -21,7 +21,7 @@
 <div>
     <!--客户头像-->
     <div class="img-center">
-        <a><img src="images/per_icon.png"></a>
+        <a><img src="../images/per_icon.png"></a>
     </div>
     <!--客户信息-->
     <form class="main">
