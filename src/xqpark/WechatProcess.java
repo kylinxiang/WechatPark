@@ -1,82 +1,87 @@
 package xqpark;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.URLEncoder;
 import java.util.Date;
 import java.util.Iterator;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import xqpark.ReceiveXmlEntity;
 
 /**
- * Î¢ĞÅxmlÏûÏ¢´¦ÀíÁ÷³ÌÂß¼­Àà
+ * å¾®ä¿¡xmlæ¶ˆæ¯å¤„ç†æµç¨‹é€»è¾‘ç±»
  * @author pamchen-1
  *
  */
 public class WechatProcess {
 	/**
-	 * ½âÎö´¦Àíxml¡¢»ñÈ¡ÖÇÄÜ»Ø¸´½á¹û£¨Í¨¹ıÍ¼Áé»úÆ÷ÈËapi½Ó¿Ú£©
-	 * @param xml ½ÓÊÕµ½µÄÎ¢ĞÅÊı¾İ
-	 * @return	×îÖÕµÄ½âÎö½á¹û£¨xml¸ñÊ½Êı¾İ£©
+	 * è§£æå¤„ç†xml
+	 * @param xml æ¥æ”¶åˆ°çš„å¾®ä¿¡æ•°æ®
+	 * @return æœ€ç»ˆçš„è§£æç»“æœï¼ˆxmlæ ¼å¼æ•°æ®ï¼‰
 	 */
 	public String processWechatMag(String xml){
-		/** ½âÎöxmlÊı¾İ */
+		/** è§£æxmlæ•°æ®*/
 		ReceiveXmlEntity xmlEntity = getMsgEntity(xml);
 		
-		/** ÒÔÎÄ±¾ÏûÏ¢ÎªÀı£¬µ÷ÓÃÍ¼Áé»úÆ÷ÈËapi½Ó¿Ú£¬»ñÈ¡»Ø¸´ÄÚÈİ */
+		/** è·å–å›å¤å†…å®¹ */
 		String result = "";
-		//System.out.println(xmlEntity.getContent());´òÓ¡ÊÕµ½µÄĞÅÏ¢
+		//System.out.println(xmlEntity.getContent());ï¿½ï¿½Ó¡ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 		if("text".endsWith(xmlEntity.getMsgType())){
-			if("ÓÅ»İ".equals(xmlEntity.getContent()))
-				result = "»¶Ó­Ê¹ÓÃĞ¡Ç¿Í£³µ£¬µ±Ç°Ã»ÓĞÓÅ»İĞÅÏ¢!";
+			if("ä¼˜æƒ ".equals(xmlEntity.getContent()))
+				result = "æ¬¢è¿ä½¿ç”¨å°å¼ºåœè½¦ï¼Œå½“å‰æ²¡æœ‰ä¼˜æƒ ä¿¡æ¯!";
 			else
-				result = new TestApiProcess().getTulingResult(xmlEntity.getContent());
+				result = getTulingResult(xmlEntity.getContent());
 		}else{
 			if("01_ORDER".equals(xmlEntity.getEventKey()))
 			{
-				result = "ÎÒµÄ¶©µ¥";
+				result = "æˆ‘çš„è®¢å•";
 			}
 			else if("02_WALLET".equals(xmlEntity.getEventKey()))
 			{
-				result = "ÎÒµÄÇ®°ü";
+				result = "æˆ‘çš„é’±åŒ…";
 			}
 			else if("03_COLLECTION".equals(xmlEntity.getEventKey()))
 			{
-				result = "ÎÒµÄÊÕ²Ø";
+				result = "æˆ‘çš„æ”¶è—";
 			}
 			else if("04_INFO".equals(xmlEntity.getEventKey()))
 			{
-				result = "¸öÈËĞÅÏ¢";
+				result = "ä¸ªäººä¿¡æ¯";
 			}
 			else if("05_CHANGE".equals(xmlEntity.getEventKey()))
 			{
-				result = "ĞŞ¸ÄÃÜÂë";
+				result = "ä¿®æ”¹å¯†ç ";
 			}
 			else if("GUIDE".equals(xmlEntity.getEventKey()))
 			{
-				result = "Ê¹ÓÃ·½·¨:\n1.Ê¹ÓÃÊÖ»úºÅ×¢²á.\n2.×¢²á³É¹¦ºóµã»÷Í£³µ.\n3.ËÑË÷µ±Ç°Î»ÖÃµÄ³µÎ»ĞÅÏ¢¡£\n4Ñ¡¶¨ºóÏÂµ¥²¢Ö§¸¶¶¨½ğ.";
+				result = "ä½¿ç”¨æ–¹æ³•:\n1.ä½¿ç”¨æ‰‹æœºå·æ³¨å†Œ.\n2.æ³¨å†ŒæˆåŠŸåç‚¹å‡»åœè½¦.\n3.æœç´¢å½“å‰ä½ç½®çš„è½¦ä½ä¿¡æ¯.\n4.é€‰å®šåä¸‹å•å¹¶æ”¯ä»˜å®šé‡‘.";
 			}else if("subscribe".equals(xmlEntity.getEvent()))
 			{
-				result = "Ğ¡Ç¿Í£³µ£¨www.xqpark.cn£©ÊÇ¹«Ë¾¶ÀÁ¢ÑĞ·¢µÄ¹úÄÚÊ×¼Ò³µÎ»·ÖÏí¼°Ô¤¶©Æ½Ì¨£¬ÊÇº¼ÖİÊĞ¸ßĞÂÇøÖØµãÖ§³ÖÏîÄ¿¡£"
-						+ "Ğ¡Ç¿Í£³µÖ¼ÔÚÍ¨¹ı»¥ÁªÍøÈÃ³µÖ÷¿ìËÙÕÒµ½Ä¿µÄµØ¸½½üĞÔ¼Û±È×î¸ßµÄÍ£³µÎ»£¬²¢Ìá¹©³µÎ»Ô¤¶©¡¢µ¼º½¡¢ÔÚÏßÖ§¸¶µÈ·şÎñ£¬ÈÃ³µÖ÷Í£³µ¸üÊ¡ĞÄ¡¢¸üÊ¡Ç®¡£";
-			}
-				
-					
+				result = "å°å¼ºåœè½¦ï¼ˆwww.xqpark.cnï¼‰æ˜¯å…¬å¸ç‹¬ç«‹ç ”å‘çš„å›½å†…é¦–å®¶è½¦ä½åˆ†äº«åŠé¢„è®¢å¹³å°ï¼Œæ˜¯æ­å·å¸‚é«˜æ–°åŒºé‡ç‚¹æ”¯æŒé¡¹ç›®ã€‚"
+						+ "å°å¼ºåœè½¦æ—¨åœ¨é€šè¿‡äº’è”ç½‘è®©è½¦ä¸»å¿«é€Ÿæ‰¾åˆ°ç›®çš„åœ°é™„è¿‘æ€§ä»·æ¯”æœ€é«˜çš„åœè½¦ä½ï¼Œå¹¶æä¾›è½¦ä½é¢„è®¢ã€å¯¼èˆªã€åœ¨çº¿æ”¯ä»˜ç­‰æœåŠ¡ï¼Œè®©è½¦ä¸»åœè½¦æ›´çœå¿ƒã€æ›´çœé’±ã€‚";
+			}			
 		}
 		
-		/** ´ËÊ±£¬Èç¹ûÓÃ»§ÊäÈëµÄÊÇ¡°ÄãºÃ¡±£¬ÔÚ¾­¹ıÉÏÃæµÄ¹ı³ÌÖ®ºó£¬resultÎª¡°ÄãÒ²ºÃ¡±ÀàËÆµÄÄÚÈİ 
-		 *  ÒòÎª×îÖÕ»Ø¸´¸øÎ¢ĞÅµÄÒ²ÊÇxml¸ñÊ½µÄÊı¾İ£¬ËùÓĞĞèÒª½«Æä·â×°ÎªÎÄ±¾ÀàĞÍ·µ»ØÏûÏ¢
-		 * */
-		result = formatXmlAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(), result);
-		
+		/** å› ä¸ºæœ€ç»ˆå›å¤ç»™å¾®ä¿¡çš„ä¹Ÿæ˜¯xmlæ ¼å¼çš„æ•°æ®ï¼Œæ‰€æœ‰éœ€è¦å°†å…¶å°è£…ä¸ºæ–‡æœ¬ç±»å‹è¿”å›æ¶ˆæ¯*/
+		result = formatXmlAnswer(xmlEntity.getFromUserName(), xmlEntity.getToUserName(), result);	
 		return result;
 	}
 	
 	/**
-	 * ·â×°ÎÄ×ÖÀàµÄ·µ»ØÏûÏ¢
+	 * å°è£…æ–‡å­—ç±»çš„è¿”å›æ¶ˆæ¯
 	 * @param to
 	 * @param from
 	 * @param content
@@ -98,7 +103,7 @@ public class WechatProcess {
 	}
 	
 	/**
-	 * ½âÎöÎ¢ĞÅxmlÏûÏ¢
+	 *  è§£æå¾®ä¿¡xmlæ¶ˆæ¯
 	 * @param strXml
 	 * @return
 	 */
@@ -108,35 +113,82 @@ public class WechatProcess {
 			if (strXml.length() <= 0 || strXml == null)
 				return null;
 			 
-			// ½«×Ö·û´®×ª»¯ÎªXMLÎÄµµ¶ÔÏó
+			// å°†å­—ç¬¦ä¸²è½¬åŒ–ä¸ºXMLæ–‡æ¡£å¯¹è±¡
 			Document document = DocumentHelper.parseText(strXml);
-			// »ñµÃÎÄµµµÄ¸ù½Úµã
+			// è·å¾—æ–‡æ¡£çš„æ ¹èŠ‚ç‚¹
 			Element root = document.getRootElement();
-			// ±éÀú¸ù½ÚµãÏÂËùÓĞ×Ó½Úµã
+			// éå†æ ¹èŠ‚ç‚¹ä¸‹æ‰€æœ‰å­èŠ‚ç‚¹
 			Iterator<?> iter = root.elementIterator();
 			
-			// ±éÀúËùÓĞ½áµã
+			// éå†æ‰€æœ‰ç»“ç‚¹
 			msg = new ReceiveXmlEntity();
-			//ÀûÓÃ·´Éä»úÖÆ£¬µ÷ÓÃset·½·¨
-			//»ñÈ¡¸ÃÊµÌåµÄÔªÀàĞÍ
+			//åˆ©ç”¨åå°„æœºåˆ¶ï¼Œè°ƒç”¨setæ–¹æ³•
+			//è·å–è¯¥å®ä½“çš„å…ƒç±»å‹
 			Class<?> c = Class.forName("xqpark.ReceiveXmlEntity");
-			msg = (ReceiveXmlEntity)c.newInstance();//´´½¨Õâ¸öÊµÌåµÄ¶ÔÏó
+			msg = (ReceiveXmlEntity)c.newInstance();//åˆ›å»ºè¿™ä¸ªå®ä½“çš„å¯¹è±¡
 			
 			while(iter.hasNext()){
 				Element ele = (Element)iter.next();
-				//»ñÈ¡set·½·¨ÖĞµÄ²ÎÊı×Ö¶Î£¨ÊµÌåÀàµÄÊôĞÔ£©
+				//è·å–setæ–¹æ³•ä¸­çš„å‚æ•°å­—æ®µï¼ˆå®ä½“ç±»çš„å±æ€§
 				Field field = c.getDeclaredField(ele.getName());
-				//»ñÈ¡set·½·¨£¬field.getType())»ñÈ¡ËüµÄ²ÎÊıÊı¾İÀàĞÍ
+				//è·å–setæ–¹æ³•ï¼Œfield.getType())è·å–å®ƒçš„å‚æ•°æ•°æ®ç±»å‹
 				Method method = c.getDeclaredMethod("set"+ele.getName(), field.getType());
-				//µ÷ÓÃset·½·¨
+				//è°ƒç”¨setæ–¹æ³•
 				method.invoke(msg, ele.getText());
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("xml ¸ñÊ½Òì³£: "+ strXml);
+			System.out.println("xml ï¿½ï¿½Ê½ï¿½ì³£: "+ strXml);
 			e.printStackTrace();
 		}
 		return msg;
 	}
+	
+	/**
+	 * è°ƒç”¨å›¾çµæœºå™¨äººapiæ¥å£ï¼Œè·å–æ™ºèƒ½å›å¤å†…å®¹ï¼Œè§£æè·å–è‡ªå·±æ‰€éœ€ç»“æœ
+	 * @param content
+	 * @return
+	 */
+	public String getTulingResult(String content){
+		/** æ­¤å¤„ä¸ºå›¾çµapiæ¥å£ï¼Œå‚æ•°keyéœ€è¦è‡ªå·±å»æ³¨å†Œç”³è¯·ï¼Œå…ˆä»¥11111111ä»£æ›¿ */
+		String apiUrl = "http://www.tuling123.com/openapi/api?key=9edf14145595d3fd11c48e17e0d5ff95&info=";
+		String param = "";
+		try {
+			param = apiUrl+URLEncoder.encode(content,"utf-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} //å°†å‚æ•°è½¬ä¸ºurlç¼–ç 
+		
+		/**å‘é€httpgetè¯·æ±‚ */
+		HttpGet request = new HttpGet(param);
+		String result = "";
+		try {
+			HttpResponse response = HttpClients.createDefault().execute(request);
+			if(response.getStatusLine().getStatusCode()==200){
+				result = EntityUtils.toString(response.getEntity());
+			}
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		/** è¯·æ±‚å¤±è´¥å¤„ç† */
+		if(null==result){
+			return "å¯¹ä¸èµ·ï¼Œä½ è¯´çš„è¯çœŸæ˜¯å¤ªé«˜æ·±äº†â€¦â€¦";
+		}
+		
+		try {
+			JSONObject json = new JSONObject(result);
+			//ä»¥code=100000ä¸ºä¾‹ï¼Œå‚è€ƒå›¾çµæœºå™¨äººapiæ–‡æ¡£
+			if(100000==json.getInt("code")){
+				result = json.getString("text");
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+  }
 
 }

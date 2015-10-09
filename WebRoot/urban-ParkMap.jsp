@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,15 +61,15 @@
             <i class="icon-add"></i>
             <label>添加</label>
         </a>
-        <a class="icon">
+        <a href="parking-Time.jsp" class="icon">
             <i class="icon-time"></i>
             <label>计时</label>
         </a>
     </div>
     <!--停车详情-->
-    <div class="map-park-yd">
+    <div class="map-park-yd "style="display: none">
         <div class="park-box">
-            <i></i>
+            <i class="icon-g-park"></i>
             <div class="box-txt">
                 <p>杭州市万塘路停车场</p>
                 <p>10元/小时，1000米</p>
@@ -80,6 +81,26 @@
            </div>
         </div>
     </div>
+    <!--停车详情不可预定-->
+    <div  class="map-park-noyd"  >
+        <div class="park-box">
+            <i class="icon-b-park"></i>
+            <a href="urban-Details-No.jsp" class="box-txt">
+                <p>杭州市万塘路停车场</p>
+                <p>10元/小时，1000米</p>
+                <p>车位状态：请联系停车场</p>
+            </a>
+
+            <div class="btn-box">
+                <a href="" class="dh-btn"></a>
+                <p>导航前往</p>
+            </div>
+            <div class="btn-box">
+                <a href="" class="lx-btn"></a>
+                <p>联系停车场</p>
+            </div>
+        </div>
+    </div>
     <!--引入JQ-->
     <script type="text/javascript" src="js/jquery.js"></script>
     <!--地图API接入-->
@@ -87,7 +108,7 @@
         var map = new BMap.Map("container");
         map.centerAndZoom("杭州滨江",18);
         map.enableScrollWheelZoom();    //启用滚轮放大缩小，默认禁用
-        map.enableContinuousZoom();     //启用地图惯性拖拽，默认禁用
+        map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
     </script>
     <!--搜索提示隐藏-->
     <script type="text/javascript">

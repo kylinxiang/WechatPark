@@ -121,13 +121,13 @@
             
             var headerElement = $("<h4>");
             headerElement.text(this.config.time[key].text); // Options
-            headerElement.css("font-size", Math.round(0.07 * this.data.attributes.item_size));
+           // headerElement.css("font-size", Math.round(0.07 * this.data.attributes.item_size));font-size不兼容引起字体太小
             headerElement.css("line-height", Math.round(0.07 * this.data.attributes.item_size) + "px");
             headerElement.appendTo(textElement);
             
             var numberElement = $("<span>");
             numberElement.css("font-size", Math.round(0.21 * this.data.attributes.item_size));
-           // numberElement.css("line-height", Math.round(0.07 * this.data.attributes.item_size) + "px");line-heght不兼容引起BUG
+           // numberElement.css("line-height", Math.round(0.07 * this.data.attributes.item_size) + "px");line-heght不兼容引起位置不居中
             numberElement.appendTo(textElement);
             
             this.data.text_elements[key] = numberElement;

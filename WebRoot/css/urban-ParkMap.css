@@ -199,7 +199,7 @@
     margin-top: 4px;
     color: #717071;
 }
-.park-box i{
+.park-box .icon-g-park{
     display:block;
     float: left;
     background: url(../images/icon-g-park.png) center no-repeat;
@@ -213,6 +213,15 @@
     left: 70px;
     top: 5px;
     margin-left: 5px;
+}
+.box-txt:visited{
+    color: #717071;
+}
+.box-txt p{
+    font-size: 9px;
+    height: 16px;
+    line-height: 20px;
+    font-size: 1.2rem;
 }
 .park-box .btn{
     display: block;
@@ -236,4 +245,57 @@
 .btn span{
     font-size: .6rem;
     color: #878787;
+}
+/*不可预定-车场信息*/
+.map-park-noyd{
+    position: absolute;
+    width: 92%;
+    height: 64px;
+    bottom:4%;
+    left: 4%;
+    background: #fff;
+    border: 1px solid #b9b9b9;
+    -webkit-box-sizing:border-box
+}
+.park-box .btn-box{
+    display: block;
+    float: right;
+    width:40px;
+    height: 56px;
+    text-align: center;
+}
+.btn-box .lx-btn{
+    display: block;
+    margin: 5px auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: url(../images/icon-call.png) center no-repeat #ffa910;
+    background-size: 12px 12px;
+}
+.btn-box .dh-btn{
+    display: block;
+    margin: 5px auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: url(../images/icon-nav.png) center no-repeat #009fe8;
+    background-size: 12px 12px;
+}
+.btn-box p{
+    display: block;
+    width: 60px;
+    -webkit-transform: scale(0.6);
+    margin-left: -10px;
+    margin-top: -6px;
+    font-size: 0.8rem;
+}
+.park-box .icon-b-park{
+    display:block;
+    float: left;
+    background: url(../images/icon-b-park.png) center no-repeat;
+    background-size: 46px 46px;
+    width: 66px;
+    height: 56px;
+    border-right: 1px solid #b9b9b9;
 }

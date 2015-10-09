@@ -48,23 +48,24 @@ public class WechatIndex extends HttpServlet {
 		while ((s = br.readLine()) != null) {
 			sb.append(s);
 		}
-		String xml = sb.toString();	//´Î¼´Îª½ÓÊÕµ½Î¢ĞÅ¶Ë·¢ËÍ¹ıÀ´µÄxmlÊı¾İ
+		String xml = sb.toString();	//ä¸ºæ¥æ”¶åˆ°å¾®ä¿¡ç«¯å‘é€è¿‡æ¥çš„xmlæ•°æ®
+		System.out.println(xml);
 		
-		//¶ÁÈ¡½ÓÊÕµ½µÄxmlÏûÏ¢ 
+		//è¯»å–æ¥æ”¶åˆ°çš„xmlæ¶ˆæ¯
 		String result = "";
-		//ÅĞ¶ÏÊÇ·ñÊÇÎ¢ĞÅ½ÓÈë¼¤»îÑéÖ¤£¬Ö»ÓĞÊ×´Î½ÓÈëÑéÖ¤Ê±²Å»áÊÕµ½echostr²ÎÊı£¬´ËÊ±ĞèÒª°ÑËüÖ±½Ó·µ»Ø 
-
-        String signature = request.getParameter("signature");	   // Î¢ĞÅ¼ÓÃÜÇ©Ãû
-        String timestamp = request.getParameter("timestamp");      // Ê±¼äÂ¾
-        String nonce = request.getParameter("nonce");              // Ëæ»úÊı
-        String echostr = request.getParameter("echostr");          // Ëæ»ú×Ö·û´®
+		
+		//åˆ¤æ–­æ˜¯å¦æ˜¯å¾®ä¿¡æ¥å…¥æ¿€æ´»éªŒè¯ï¼Œåªæœ‰é¦–æ¬¡æ¥å…¥éªŒè¯æ—¶æ‰ä¼šæ”¶åˆ°echostrå‚æ•°ï¼Œæ­¤æ—¶éœ€è¦æŠŠå®ƒç›´æ¥è¿”å›
+        String signature = request.getParameter("signature");	   // å¾®ä¿¡åŠ å¯†ç­¾å
+        String timestamp = request.getParameter("timestamp");      // æ—¶é—´æˆ®
+        String nonce = request.getParameter("nonce");              // éšæœºæ•°
+        String echostr = request.getParameter("echostr");          // éšæœºå­—ç¬¦ä¸²
          
-        // Í¨¹ı¼ìÑé signature ¶ÔÇëÇó½øĞĞĞ£Ñé£¬ÈôĞ£Ñé³É¹¦ÔòÔ­Ñù·µ»Ø echostr£¬±íÊ¾½ÓÈë³É¹¦£¬·ñÔò½ÓÈëÊ§°Ü
+        //é€šè¿‡æ£€éªŒ signature å¯¹è¯·æ±‚è¿›è¡Œæ ¡éªŒï¼Œè‹¥æ ¡éªŒæˆåŠŸåˆ™åŸæ ·è¿”å› echostrï¼Œè¡¨ç¤ºæ¥å…¥æˆåŠŸï¼Œå¦åˆ™æ¥å…¥å¤±è´¥
         if (echostr != null && echostr.length() > 1) {
 		    if (CheckUtil.checkSignature(signature, timestamp, nonce))
 			   result = echostr;
 		} else {
-			//Õı³£µÄÎ¢ĞÅ´¦ÀíÁ÷³Ì
+			//æ­£å¸¸çš„å¾®ä¿¡å¤„ç†æµç¨‹
 			result = new WechatProcess().processWechatMag(xml);
 
 		}

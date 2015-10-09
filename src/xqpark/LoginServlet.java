@@ -1,12 +1,20 @@
 package xqpark;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//import javax.servlet.http.HttpSession;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import xqpark.ParkApi;
 
 /**
  * Servlet implementation class LoginServlet
@@ -29,19 +37,55 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		JSONObject jsonobj = null,info = null;
+		long userid=0,registertime=0;
+		int usertype=0,sex=0,ifexamine=0;
+		float blance=0;
+		String msg = "",headurl="",nickname="",borth="",email="",platenumber="",citycode="",accesstoken="";
+		
 		response.setContentType("text/html;charset=utf-8") ;
 		request.setCharacterEncoding("utf-8") ;
 		
 		String username = request.getParameter("username");     
         String password = request.getParameter("password");
+        //System.out.println("HELLO");
         
-        if(username.equals("15988846256") && password.equals("test"))
-        {
-        	System.out.println(username);
-        	request.getSession().setAttribute("username", username);//登录成功，向session存入一个登录标记  
-            response.sendRedirect("/WechatPark/urban-ParkMap.jsp");  
-        	return;
-        }
+        try {
+        	jsonobj = ParkApi.login(username, password);
+        	
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        try {
+        	msg = jsonobj.getString("msg");
+        	System.out.println(msg);
+			if(jsonobj.getInt("code") == 1)
+			{
+				info = jsonobj.getJSONObject("info");
+	        	
+	        	ifexamine = jsonobj.getInt("ifexamine");
+	        	userid = info.getLong("userid");
+	        	registertime = info.getLong("registertime");   	
+	        	usertype = info.getInt("usertype");
+	        	blance = (float) info.getDouble("blance");
+	        	headurl = info.getString("headurl");
+	        	
+				request.getSession().setAttribute("sessionKey", "success");
+				
+				request.getSession().setAttribute("username", username);
+				request.getSession().setAttribute("userid", userid);	
+			    response.sendRedirect("/ParkWechat/TestInfo.jsp");  
+				return;
+			}else{
+				response.sendRedirect("/ParkWechat/login.jsp");
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**

@@ -1,0 +1,35 @@
+body{
+    background: #fff;
+}
+.details-box{
+    position: relative;
+    padding: 12px;
+    font-size: 1.2rem;
+    color: #717071;
+}
+.details-box h3{
+    color: #595757;
+}
+.details-box .btn{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 12px;
+    height: 30px;
+    width: 90px;
+    margin: auto;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.bg-o{
+    background: #ffa310;
+}
+.bg-g{
+    background: #97cc17;
+}
+.bg-grey{
+    background: #c6c6c6;
+}

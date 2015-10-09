@@ -1,0 +1,113 @@
+.wrapper {width:1080px;position: relative;box-sizing: border-box;overflow: hidden;}
+.top-bar{ width:100%;height: 196px;background: #1b95d4;
+    color: #fff; position: relative}
+.top-bar h3{
+    font-size: 65px;
+    line-height: 195px;
+    text-align: center;
+}
+.top-bar-rebtn{
+    position: absolute;
+    width: 33px;
+    height: 53px;
+    left: 40px;
+    top: 71px;
+    background: url(../images/icon-rebtn.png) no-repeat center;
+}
+.top-call-back{
+    position: absolute;
+    width: 65px;
+    height: 98px;
+    right: 45px;
+    top: 48px;
+    background: url(../images/Customer-service.png) no-repeat center;
+}
+.login-font{
+    position: absolute;
+    right: 45px;
+    top: 64px;
+    color: #fff;
+    font-size: 4rem;
+    text-align: center;
+}
+/*星星评价*/
+.icon-star-4{
+    display:inline-block;
+   background: url(../images/icon-star-4.png);
+    height: 30px;
+    width: 173px;
+}
+/*图标*/
+.icon-list-down{
+    display: inline-block;
+    background: url(../images/icon-list-dowm.png) center no-repeat;
+    width: 60px;
+    height: 20px;
+}
+.icon-b-love{
+    display: inline-block;
+    background: url(../images/icon-b-love.png) center no-repeat;
+    width: 27px;
+    height: 23px;
+    margin: 0 4px;
+}
+.icon-id{
+    display: inline-block;
+    background: url(../images/icon-id.png) center no-repeat;
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+}
+
+.icon-place{
+    display: inline-block;
+    background: url(../images/icon-place.png) center no-repeat;
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+}
+.icon-bus{
+    display: inline-block;
+    background: url(../images/icon-bus.png) center no-repeat;
+    background-size: 30px 30px;
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+}
+.icon-cost{
+    display:block;
+    background: url(../images/icon-cost.png) center no-repeat;
+    width: 44px;
+    height: 47px;
+}
+.icon-right{
+    display:block;
+    background: url(../images/icon-right.png) center no-repeat;
+    width: 44px;
+    height: 47px;
+}
+.icon-plate{
+    display:block;
+    background: url(../images/icon-plate.png) center no-repeat;
+    width: 44px;
+    height: 47px;
+}
+/*单独样式*/
+.bg-w{
+    background: #fff;
+}
+.font-c{
+    color: #fda913;
+}
+.size-small{
+    font-size: 2.4rem;
+    color: #c3c3c3;
+}
+/*焦点轮播*/
+/* 效果CSS开始 */
+.slider{display:none}/*用于获取更加体验*/
+.focus span{width:10px;height:10px;margin-right:10px;border-radius:50%;background:#666;font-size:0}
+.focus span.current{background:#fff}
+/* 效果CSS结束 */

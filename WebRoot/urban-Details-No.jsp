@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@
     <h3>停车场详情</h3>
 </div>
 <div class="main">
-    <!--焦点轮播­-->
+    <!--焦点轮播-->
     <div class="main-focus">
         <div class="slider">
             <ul>
@@ -34,11 +35,11 @@
             $(".slider").yxMobileSlider({width:320,height:200,during:3000})
         </script>
     </div>
-    <!--è½¦åºä¿¡æ¯-->
+    <!--车场信息-->
     <div class="main-head bottom-sd " >
-        <p class="title">杭州市万塘路停车场<span>4.5分</span><span class="star"></span></p>
+        <p class="title">杭州市万塘路停车场<span>4.5分</span><span class="star"></span></p>
         <p>地址：万塘路118号</p>
-        <p><i class="icon-id"></i>身份认证<i class="icon-place"></i>实地认证<i class="icon-bus"></i>执照认证</p>
+        <p><i class="icon-id"></i>身份认证<i class="icon-place"></i>实地认证<i class="icon-bus"></i>执照认证</p>
     </div>
     <!--收费信息-->
     <div class="main-detail bottom-sd">
@@ -49,16 +50,16 @@
     <!--车主评价-->
     <div class="main-review bottom-sd">
         <p class="h3">车主评价</p>
-        <p class="clearfix"><b>王先生</b><span class="star"></span></p>
+        <p class="clearfix"><b>王先生</b><span class="star"></span></p>
         <p><span class="txt text-nowrap">停车服务好停车服务好停车服务好停车服务好停车服务好停车服务好停车服务好停车服务好停车服务好停车服务好</span>
             <span class="more">更多评价</span></p>
     </div>
 </div>
-<!--操作按钮--->
+<!--操作按钮-->
 <div class="main-btn clearfix">
     <div>
         <a class="call-btn"><span></span>联系停车场</a>
-        <a class="gh-btn"><span></span>导航前往</a>
+        <a class="gh-btn"><span></span>导航前往</a>
     </div>
 </div>
 </body>

@@ -1,0 +1,169 @@
+body{
+    background: #eeeef0;
+}
+.sy-money{
+    width: 96%;
+    margin: 2% auto;
+    background: #fff;
+}
+.money-box{
+    width: 90%;
+    margin: 0 auto;
+    padding: 4%;
+    height: 40px;
+    line-height: 40px;
+}
+.money-box img{
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.sy-money p{
+    padding-left: 2%;
+    float: left;
+    font-size: 14px;
+    color: #8e8e8e;
+}
+.money-box span{
+    color:#dfdfdf;
+    float:right;
+    font-size: 1.2rem;
+}
+/*се╩щ╬М*/
+.yhj{
+    width: 96%;
+    margin: 2% auto;
+    background: #fff;
+}
+.yhj-header{
+    width: 90%;
+    margin: 0 auto;
+    height: 40px;
+    line-height: 40px;
+    padding-top: 4%;
+}
+.yhj-header img{
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+.yhj-header h2{
+    padding-left: 2%;
+    float: left;
+    font-size: 14px;
+    color: #8e8e8e;
+}
+.yhj-header span{
+    color:#dfdfdf;
+    float: right;
+    font-size: 1.4rem;
+}
+.yhj-box ul{
+    height:1%;
+    margin: 0 auto;
+}
+.yhj-box li{
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    margin: 4% 5%;
+    border: 1px solid #d8d8d8;
+    height: 80px;
+}
+.yhj-box li img{
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin: 0 auto;
+}
+.img-center{
+    float: left;
+    width: 20%;
+    height: 100%;
+    display:table;
+    text-align:center;
+}
+.img-center span{
+    display: table-cell;
+    vertical-align: middle;
+}
+.yhj-box li .box{
+    width: 50%;
+    height: 66px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 1.2rem;
+}
+.yhj-box li .box h3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 22px;
+    line-height: 22px;
+    font-size: 1.4rem;
+}
+.yhj-box li .box p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 22px;
+    line-height: 22px;
+}
+.yhj-box li>span {
+    line-height: 80px;
+    float: left;
+}
+.font-g{
+    color: #97cc18;
+}
+.font-b{
+    color: #029ee9;
+}
+.font-y{
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    color: #9e9e9e;
+    font-size: 1.0rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.yhj-box li h3{
+    font-size:1.8em;
+}
+.yhj-box .sliod-g{
+    position: absolute;
+    top: 5px;
+    right: 60px;
+    height: 70px;
+    width: 4px;
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#b4b4b6), to(#97cd17));
+}
+.yhj-box .sliod-b{
+    position: absolute;
+    top: 5px;
+    right: 60px;
+    height: 70px;
+    width: 4px;
+    background:-webkit-gradient(linear, 0 0, 0 100%, from(#b4b4b6), to(#029ee9));
+}
+.yhj-box .tip{
+    position: absolute;
+    top: 16px;
+    right: 35px;
+    font-size: 16px;
+}
+.yhj-box .price{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 48px;
+}
+
+

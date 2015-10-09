@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <title>小强停车</title>
 </head>
 <body>
- 	<span style="align:center">这里是首页</span>
+ 这里是首页
 <a href="urban-ParkMap.jsp">回去</a>
 </body>
 </html>

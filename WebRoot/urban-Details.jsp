@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +16,11 @@
 <body>
 <!--头部信息-->
 <div class="top-bar">
-    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <a href="urban-ParkMap.html" class="top-bar-rebtn"></a>
     <h3>停车场详情</h3>
 </div>
 <div class="main">
-    <!--焦点轮播­-->
+    <!--焦点轮播-->
     <div class="main-focus">
         <div class="slider">
             <ul>
@@ -34,16 +35,16 @@
             $(".slider").yxMobileSlider({width:320,height:200,during:3000})
         </script>
     </div>
-    <!--è½¦åºä¿¡æ¯-->
+    <!--车场信息-->
     <div class="main-head bottom-sd " >
         <p class="title">杭州市万塘路停车场<span>4.5分</span><span class="star"></span></p>
         <p>地址：万塘路118号</p>
-        <p><i class="icon-id"></i>身份认证<i class="icon-place"></i>实地认证<i class="icon-bus"></i>执照认证</p>
+        <p><i class="icon-id"></i>身份认证<i class="icon-place"></i>实地认证<i class="icon-bus"></i>执照认证</p>
     </div>
-    <!--æ¶è´¹ä¿¡æ¯-->
+    <!--收费信息-->
     <div class="main-detail bottom-sd">
         <p>距离：800米</p>
-        <p>收费：30元/3小时,10元/次,每天最高60元</p>
+        <p>收费：30元/3小时,10元/次,每天最高60元</p>
         <p>开放时间：00:00-23:00</p>
     </div>
     <!--车主评价-->
@@ -57,7 +58,7 @@
 <!--操作按钮-->
 <div class="main-btn clearfix">
     <div>
-        <a class="yd-btn"><span></span>立即预订</a>
+        <a href="order-Confirm.jsp" class="yd-btn"><span></span>立即预订</a>
     </div>
 </div>
 </body>

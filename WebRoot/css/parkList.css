@@ -1,0 +1,125 @@
+body{
+    background: #fff;
+}
+.list-tab{
+    width:100%;
+    height: 38px;
+
+}
+.list-tab .tab-btn{
+    float: left;
+    width: 20%;
+    text-align: center;
+    height: 37px;
+    line-height: 38px;
+    font-size: 1.2rem;
+    border-bottom:1px solid #c8c8c8 ;
+}
+.list-tab .show{
+    border-bottom: 3px solid #ffa910;
+    height: 36px;
+    line-height: 38px;
+}
+.list-tab-box{
+    position: relative;
+    width: 100%;
+    height: 120px;
+
+}
+.list-tab-box .tab-box{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #f7f7f7;
+}
+.box-photo{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:16px;
+    height:84px;
+    margin: auto;
+    width: 60px;
+}
+.box-photo img{
+    border-radius: 5px;
+    width: 60px;
+    height: 52px;
+}
+.box-photo .yd-btn{
+    display: block;
+    width: 60px;
+    height: 20px;
+    background: #8dc21f;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 1.0rem;
+}
+.box-photo p{
+    width: 60px;
+    text-align: center;
+    font-size: 1.0rem;
+}
+.tab-box .box-txt{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:80px;
+    height:100px;
+    margin: auto;
+}
+.tab-box .box-txt h3{
+    font-size: 1.2rem;
+    color: #ffa910;
+}
+.tab-box .box-txt p{
+    font-size: 1.2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 20px;
+}
+.box-txt .pj-box .icon-star-4{
+    background: url(../images/icon-star-4.png) no-repeat center;
+    background-size: 60px 10px;
+    height: 20px;
+    width: 60px;
+    float: left;
+}
+.box-icon{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:30px;
+    height:84px;
+    margin: auto;
+}
+/*Í¼±ê*/
+.icon-id{
+    display: inline-block;
+    background: url(../images/icon-id.png) center no-repeat;
+    background-size: 12px 12px;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+}
+
+.icon-place{
+    display: inline-block;
+    background: url(../images/icon-place.png) center no-repeat;
+    background-size: 12px 12px;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+}
+.icon-bus{
+    display: inline-block;
+    background: url(../images/icon-bus.png) center no-repeat;
+    background-size: 12px 12px;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+}

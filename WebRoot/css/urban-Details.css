@@ -24,6 +24,8 @@
 /*主题标题*/
 .main-head{
     padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .main-head  .title{
     color: #fda913;
@@ -40,12 +42,10 @@
     width: 80px;
 }
 .main-detail{
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding: 10px 20px;
 }
 .main-review{
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 20px;
 }
 .main-review p{
     padding-bottom: 5px;

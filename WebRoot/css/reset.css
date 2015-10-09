@@ -30,9 +30,9 @@ ul,li,dl,dt,dd,dt{
 figcaption,iframe,img{
     border: 0;
 }
-input[type="text"]{
+/*input[type="text"]{
     background-position-y: -1px;
-}
+}*/
 i,cite,em,var,address{
     font-style: normal;
 }
@@ -40,8 +40,13 @@ a{
     outline: hidden;
     text-decoration: none;
 }
+a:visited{
+    text-decoration: none;
+
+}
 a:active{
     outline: hidden;
+    text-decoration: none;
 }
 *{
     -webkit-tap-highlight-color:rgba(255,0,0,0);
@@ -62,6 +67,7 @@ input[type=submit]{
     color: #707070;
     background: none;
 }
+textarea {resize: none;-webkit-appearance: none; /*强制去除textarea自带的样式*/}
 /*清除浮动*/
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden; }
 .clearfix {

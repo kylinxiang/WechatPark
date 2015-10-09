@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,21 +8,33 @@
     <meta name="viewport" content="initial-scale=1,width=device-width,maximum=scale=1,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
-    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/common1.css" type="text/css">
     <link rel="stylesheet" href="css/login.css" type="text/css">
-    <title>登录</title>
+    <script src="js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
-	<div class="top-bar">
-		<a href="index.jsp" class="top-bar-rebtn"></a>
-        <h3>会员登录</h3>
-    </div>
-	<form action="/WechatPark/login.do" method="post">  
-            <span class = "name">帐号：</span><input autofocus required  tabindex="1" class="login" id="username" type="text" value="" placeholder="请用手机号登录" name="username"/><br/>  
-            <span class = "name">密码：</span><input required  tabindex="2" class="login" id="password" type="password" placeholder="6-20位字母、数字和符号" name="password"/><br/>  
-       <input type="submit" value="登录" />            
-    </form> 
+<!--页面头部-->
+<div class="top-bar">
+    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <h3>登录</h3>
+    <a href="register.jsp" class="login-font">注册</a>
+</div>
+<!--信息录入-->
+<div class="main">
+    <form action="/ParkWechat/login.do" method="post">
+        <div class="input">
+            <span class="phone-icon"></span><input type="text" placeholder="手机号" name="username"/>
+        </div>
+        <div class="input">
+            <span class="password-icon"></span><input type="password" placeholder="密码" name="password"/>
+        </div>
+        <input class="login-btn color-o" type="submit" value="登录" />
+    </form>
+    <!--信息操作-->
+    <div><a href="quick-login.jsp" class="login-phone">手机号快捷登录</a><a href="forget-pw.jsp" class="rem-password">忘记密码？</a></div>
+</div>
 
 </body>
 </html>

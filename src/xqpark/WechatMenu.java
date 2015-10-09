@@ -10,11 +10,11 @@ import org.json.JSONObject;
 
 public class WechatMenu {
 	/**
-	  * »ñµÃACCESS_TOKEN
+	 * è·å¾—ACCESS_TOKEN
 	 * @Title: getAccess_token
-	 * @Description: »ñµÃACCESS_TOKEN
-	 * @param @return    Éè¶¨ÎÄ¼ş
-	 * @return String    ·µ»ØÀàĞÍ
+	 * @Description: è·å¾—ACCESS_TOKEN
+	 * @param @return
+	 * @return String 
 	 * @throws
 	  */
 	 private static String getAccess_token(){  
@@ -27,12 +27,12 @@ public class WechatMenu {
 	             URL urlGet = new URL(url);
 	             HttpURLConnection http = (HttpURLConnection) urlGet.openConnection();    
 
-	             http.setRequestMethod("GET");      //±ØĞëÊÇget·½Ê½ÇëÇó    
+	             http.setRequestMethod("GET");      //å¿…é¡»æ˜¯getæ–¹å¼è¯·æ±‚  
 	             http.setRequestProperty("Content-Type","application/x-www-form-urlencoded");    
 	             http.setDoOutput(true);        
 	             http.setDoInput(true);
-	             System.setProperty("sun.net.client.defaultConnectTimeout", "30000");//Á¬½Ó³¬Ê±30Ãë
-	             System.setProperty("sun.net.client.defaultReadTimeout", "30000"); //¶ÁÈ¡³¬Ê±30Ãë
+	             System.setProperty("sun.net.client.defaultConnectTimeout", "30000");//è¿æ¥è¶…æ—¶30ç§’
+	             System.setProperty("sun.net.client.defaultReadTimeout", "30000"); //è¯»å–è¶…æ—¶30ç§’
 	             http.connect();
 
 	             InputStream is =http.getInputStream();
@@ -52,26 +52,25 @@ public class WechatMenu {
 	     }
 
 	 /**
-	  * ´´½¨Menu
+	 * åˆ›å»ºMenu
 	 * @Title: createMenu
-	 * @Description: ´´½¨Menu
+	 * @Description: ï¿½ï¿½ï¿½ï¿½Menu
 	 * @param @return
-	 * @param @throws IOException    Éè¶¨ÎÄ¼ş
-	 * @return int    ·µ»ØÀàĞÍ
+	 * @param @throws IOException 
+	 * @return int 
 	 * @throws
 	  */
 	    public static String createMenu() {
 	      String menu = "{\"button\":"
-	      		+ "[{\"type\":\"view\",\"name\":\"»ú³¡Í£³µ\",\"url\":\"http://xqpark.tunnel.mobi/WechatPark/urban-ParkMap.jsp\"},"
-	      		+ "	{\"type\":\"click\",\"name\":\"²Ù×÷Ö¸ÄÏ\",\"key\":\"GUIDE\"},"
-	      		+ "{\"name\":\"¸öÈËĞÅÏ¢\",\"sub_button\":"
-	      		+  "[{\"type\":\"click\",\"name\":\"ÎÒµÄ¶©µ¥\",\"key\":\"01_ORDER\"},"
-	      		+   "{\"type\":\"click\",\"name\":\"ÎÒµÄÇ®°ü\",\"key\":\"02_WALLET\"},"
-	      		+   "{\"type\":\"click\",\"name\":\"ÎÒµÄÊÕ²Ø\",\"key\":\"03_COLLECTION\"},"
-	      		+ 	"{\"type\":\"click\",\"name\":\"¸öÈËĞÅÏ¢\",\"key\":\"04_INFO\"},"
-	      		+ 	"{\"type\":\"click\",\"name\":\"ĞŞ¸ÄÃÜÂë\",\"key\":\"05_CHANGE\"}]}]}";
+	      		+ "[{\"type\":\"view\",\"name\":\"é¢„å®šè½¦ä½\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/urban-ParkMap.jsp\"},"
+	      		+ "	{\"type\":\"click\",\"name\":\"æ“ä½œæŒ‡å—\",\"key\":\"GUIDE\"},"
+	      		+ "{\"name\":\"ä¸ªäººä¿¡æ¯\",\"sub_button\":"
+	      		+  "[{\"type\":\"view\",\"name\":\"æˆ‘çš„è®¢å•\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/my-Details.jsp\"},"
+	      		+   "{\"type\":\"view\",\"name\":\"æˆ‘çš„é’±åŒ…\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/my-wallet.jsp\"},"
+	      		+   "{\"type\":\"view\",\"name\":\"æˆ‘çš„æ”¶è—\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/my-collection.jsp\"},"
+	      		+ 	"{\"type\":\"view\",\"name\":\"ä¸ªäººä¿¡æ¯\",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/personal.jsp\"},"
+	      		+ 	"{\"type\":\"view\",\"name\":\"ä¿®æ”¹å¯†ç \",\"url\":\"http://xqpark.tunnel.mobi/ParkWechat/forget-pw.jsp\"}]}]}";
 
-	        //´Ë´¦¸ÄÎª×Ô¼ºÏëÒªµÄ½á¹¹Ìå£¬Ìæ»»¼´¿É
 	        String access_token= getAccess_token();
 	        String action = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token="+access_token;
 	        try {
@@ -82,11 +81,11 @@ public class WechatMenu {
 	           http.setRequestProperty("Content-Type","application/x-www-form-urlencoded");    
 	           http.setDoOutput(true);        
 	           http.setDoInput(true);
-	           System.setProperty("sun.net.client.defaultConnectTimeout", "30000");//Á¬½Ó³¬Ê±30Ãë
-	           System.setProperty("sun.net.client.defaultReadTimeout", "30000"); //¶ÁÈ¡³¬Ê±30Ãë
+	           System.setProperty("sun.net.client.defaultConnectTimeout", "30000");//ï¿½ï¿½ï¿½Ó³ï¿½Ê±30ï¿½ï¿½
+	           System.setProperty("sun.net.client.defaultReadTimeout", "30000"); //ï¿½ï¿½È¡ï¿½ï¿½Ê±30ï¿½ï¿½
 	           http.connect();
 	           OutputStream os= http.getOutputStream();    
-	           os.write(menu.getBytes("UTF-8"));//´«Èë²ÎÊı    
+	           os.write(menu.getBytes("UTF-8"));//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    
 	           os.flush();
 	           os.close();
 
@@ -95,21 +94,21 @@ public class WechatMenu {
 	           byte[] jsonBytes =new byte[size];
 	           is.read(jsonBytes);
 	           String message=new String(jsonBytes,"UTF-8");
-	           return "·µ»ØĞÅÏ¢"+message;
+	           return "è¿”å›ä¿¡æ¯"+message;
 	           } catch (MalformedURLException e) {
 	               e.printStackTrace();
 	           } catch (IOException e) {
 	               e.printStackTrace();
 	           }    
-	        return "createMenu Ê§°Ü";
+	        return "createMenuå¤±è´¥";
 	   }
 
 	    /**
-	     * É¾³ıµ±Ç°Menu
+	    * åˆ é™¤å½“å‰Menu
 	    * @Title: deleteMenu
-	    * @Description: É¾³ıµ±Ç°Menu
-	    * @param @return    Éè¶¨ÎÄ¼ş
-	    * @return String    ·µ»ØÀàĞÍ
+	    * @Description:
+	    * @param @return
+	    * @return String
 	    * @throws
 	     */
 	   public static String deleteMenu()
@@ -124,8 +123,8 @@ public class WechatMenu {
 	          http.setRequestProperty("Content-Type","application/x-www-form-urlencoded");    
 	          http.setDoOutput(true);        
 	          http.setDoInput(true);
-	          System.setProperty("sun.net.client.defaultConnectTimeout", "30000");//Á¬½Ó³¬Ê±30Ãë
-	          System.setProperty("sun.net.client.defaultReadTimeout", "30000"); //¶ÁÈ¡³¬Ê±30Ãë
+	          System.setProperty("sun.net.client.defaultConnectTimeout", "30000");
+	          System.setProperty("sun.net.client.defaultReadTimeout", "30000"); 
 	          http.connect();
 	          OutputStream os= http.getOutputStream();    
 	          os.flush();
@@ -136,16 +135,13 @@ public class WechatMenu {
 	          byte[] jsonBytes =new byte[size];
 	          is.read(jsonBytes);
 	          String message=new String(jsonBytes,"UTF-8");
-	          return "deleteMenu·µ»ØĞÅÏ¢:"+message;
+	          return "deleteMenuï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢:"+message;
 	          } catch (MalformedURLException e) {
 	              e.printStackTrace();
 	          } catch (IOException e) {
 	              e.printStackTrace();
 	          }
-	       return "deleteMenu Ê§°Ü";   
+	       return "deleteMenuå¤±è´¥";   
 	   }
-	 public static void main(String[] args) {
 
-	  System.out.println(createMenu());
-	 }
 }

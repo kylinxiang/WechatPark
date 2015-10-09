@@ -1,0 +1,104 @@
+body{
+    background: #eeeef0;
+    position: relative;
+    height: 100%;
+}
+.wrapper{
+    width: 96%;
+    margin: 0 auto;
+}
+.wrapper>div{
+    margin: 5px auto 0;
+    background: #fff;
+}
+.main-time{
+    padding:4%;
+}
+.main-time .main-top{
+    position: relative;
+    border-bottom: 1px solid #ededed;
+
+}
+.main-time h2{
+    color: #707070;
+    height: 16px;
+    font-size: 2.5em;
+    line-height: 16px;
+    margin: 0 auto 6%;
+}
+.main-time .yd-time{
+    margin-left: 10%;
+}
+.yd-time>div{
+    margin-bottom: 6%;
+}
+.tip{
+    -webkit-transform:scale(0.8);
+    font-size: 9px;
+    color:#d7d7d7;
+    display: inline-block;
+}
+.main-top h3{
+    display:inline-block;
+    font-size: 1.2rem;
+}
+.main-top input{
+    width: 40%;
+    border-radius: 2px;
+    border: 1px solid #ededed;
+    color: #939393;
+}
+.main-gz{
+    padding-top:4%;
+    position: relative;
+}
+.main-gz  h4{
+    color: #707070;
+    font-size: 1.2rem;
+}
+.main-gz ol li{
+    font-size: 1.0rem;
+    color:#b4b4b5;
+    display:block;
+}
+.car-number{
+    height: 60px;
+    line-height: 60px;
+    padding-left: 6%;
+}
+.car-number h2{
+    font-size: 1.2rem;
+    color: #717171;
+    float: left;
+    line-height: 60px;
+}
+.car-number select{
+    width: 40%;
+    border: 1px solid #ededed;
+    height: 26px;
+    border-radius: 2px;
+    margin-left: 6%;
+}
+.preferential-policy{
+    padding-left: 6%;
+    font-size: 1.0rem;
+}
+.preferential-policy div{
+    height: 40px;
+    line-height: 40px;
+    padding-right: 6%;
+}
+.btn{
+    width: 100%;
+}
+.btn .query-btn{
+    margin: 10% auto 10%;
+    display: block;
+    width: 60%;
+    text-align: center;
+    font-size: 2.2em;
+    padding: 10px 0;
+    color: #fff;
+    background: #ffa810;
+    border-radius: 2px;
+}
