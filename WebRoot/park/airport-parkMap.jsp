@@ -23,7 +23,7 @@
     <div class="top-bar">
         <a href="javascript:history.back()" class="top-bar-rebtn"></a>
         <h3>地图</h3>
-        <a href="park/airport-parklist.jsp" class="login-font">列表</a>
+        <a href="airport-parklist.jsp" class="login-font">列表</a>
     </div>
     <!--地图API-->
     <div class="map">
@@ -43,7 +43,7 @@
         </div>
         <div class="box-btn">
             <img src="../images/icon-no-photo.png">
-            <a  href="paark/airport-Details.jsp" class="yd-btn">立即预约</a>
+            <a  href="airport-Details.jsp" class="yd-btn">立即预约</a>
         </div>
     </div>
 </div>

@@ -23,7 +23,7 @@
     <div class="top-bar">
         <a href="javascript:history.back()" class="top-bar-rebtn"></a>
         <h3>停车场信息</h3>
-        <a href="park/airport-parklist.jsp" class="login-font">列表</a>
+        <a href="airport-parklist.jsp" class="login-font">列表</a>
     </div>
     <!--焦点轮播-->
     <div class="main-focus" style="background: #f7f7f7;width:100%;height: 458px;">

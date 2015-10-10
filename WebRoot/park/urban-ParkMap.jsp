@@ -61,7 +61,7 @@
             <i class="icon-add"></i>
             <label>添加</label>
         </a>
-        <a href="park/parking-Time.jsp" class="icon">
+        <a href="parking-Time.jsp" class="icon">
             <i class="icon-time"></i>
             <label>计时</label>
         </a>
@@ -76,7 +76,7 @@
                 <p>车位状态：可预订</p>
             </div>
            <div class="btn">
-               <a href="park/urban-Details.jsp" class="yd-btn">立即预订</a>
+               <a href="urban-Details.jsp" class="yd-btn">立即预订</a>
                <span>(需支付定金)</span>
            </div>
         </div>
@@ -85,7 +85,7 @@
     <div  class="map-park-noyd"  >
         <div class="park-box">
             <i class="icon-b-park"></i>
-            <a href="park/urban-Details-No.jsp" class="box-txt">
+            <a href="urban-Details-No.jsp" class="box-txt">
                 <p>杭州市万塘路停车场</p>
                 <p>10元/小时，1000米</p>
                 <p>车位状态：请联系停车场</p>

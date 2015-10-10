@@ -23,7 +23,7 @@
     <div class="top-bar">
         <a href="javascript:history.back()" class="top-bar-rebtn"></a>
         <h3>评价停车场</h3>
-        <a href="park/complaint.html" class="login-font">投诉</a>
+        <a href="complaint.html" class="login-font">投诉</a>
     </div>
     <div class="title">
         <i class="icon-b-star"></i>

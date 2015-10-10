@@ -16,7 +16,7 @@
 <body>
 <!--页面头部-->
 <div class="top-bar">
-    <a href="park/order-Confirm.jsp" class="top-bar-rebtn"></a>
+    <a href="order-Confirm.jsp" class="top-bar-rebtn"></a>
     <h3>订单详情</h3>
 </div>
 <!--订单编号-->

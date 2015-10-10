@@ -8,10 +8,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="yes">
     <title>搜索停车场</title>
-    <link rel="stylesheet" href="css/reset.css" type="text/css">
-    <link rel="stylesheet" href="css/common1.css" type="text/css">
-    <link rel="stylesheet" href="css/search-park.css" type="text/css">
-    <script src="js/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/reset.css" type="text/css">
+    <link rel="stylesheet" href="../css/common1.css" type="text/css">
+    <link rel="stylesheet" href="../css/search-park.css" type="text/css">
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 <!--页面头部-->

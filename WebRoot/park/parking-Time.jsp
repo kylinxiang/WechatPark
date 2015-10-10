@@ -17,7 +17,7 @@
 <body>
 <!--页面头部信息-->
     <div class="top-bar">
-    <a href="park/urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
     <h3>小强停车</h3>
 </div>
 <!--计时器-->

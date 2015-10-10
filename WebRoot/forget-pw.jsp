@@ -34,7 +34,7 @@
         <div class="input">
             <span>确认密码</span><input type="text" placeholder="6-10位数字和字符">
         </div>
-        <a class="login-btn" style="background: #009fe8">注册</a>
+        <a class="login-btn" style="background: #009fe8">确定</a>
     </form>
 </div>
 <!--协议信息-->

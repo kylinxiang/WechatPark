@@ -67,7 +67,7 @@ public class LoginServlet extends HttpServlet {
 				info = jsonobj.getJSONObject("info");
 	        	
 	        	//ifexamine = jsonobj.getInt("ifexamine");
-	        	//userid = info.getLong("userid");
+	        	userid = info.getLong("userid");
 	        	//registertime = info.getLong("registertime");   	
 	        	//usertype = info.getInt("usertype");
 	        	//blance = (float) info.getDouble("blance");

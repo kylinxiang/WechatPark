@@ -1,4 +1,19 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"
+	import="java.io.*, javax.servlet.*, org.json.*, xqpark.ParkApi"%>
+	
+<% 
+	JSONObject jsonobj = null;
+	JSONArray list = null;
+	
+	try {
+		String userid = request.getSession().getAttribute("userid").toString();
+		jsonobj = ParkApi.getOrders(userid, "1");
+		list = jsonobj.getJSONArray("list");
+	} catch (JSONException e) {
+		e.printStackTrace();
+	}
+%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,105 +36,33 @@
 </div>
 <!--订单列表-->
 <div>
-    <ul>
-        <li class="details-box">
-            <h3>订单编号：<span>00009</span></h3>
-            <p>杭州万塘路停车场</p>
-            <div>
-                <div class="fl">起止时间：</div>
-                <div class="fl">
-                    <p>2015-09-08 10：08</p>
-                    <p>2015-09-08 11：08</p>
-                </div>
-            </div>
-            <p style="clear: both">订单状态：<span>已完成</span></p>
-            <p>预付金额：<span>5</span>元</p>
-            <a href="" class="btn bg-o">评价停车场</a>
-        </li>
-        <li class="details-box">
-            <h3>订单编号：<span>00009</span></h3>
-            <p>杭州万塘路停车场</p>
-            <div>
-                <div class="fl">起止时间：</div>
-                <div class="fl">
-                    <p>2015-09-08 10：08</p>
-                    <p>2015-09-08 11：08</p>
-                </div>
-            </div>
-            <p style="clear: both">订单状态：<span>已完成</span></p>
-            <p>预付金额：<span>5</span>元</p>
-            <a href="" class="btn bg-g">取消订单</a>
-        </li>
-        <li class="details-box">
-            <h3>订单编号：<span>00009</span></h3>
-            <p>杭州万塘路停车场</p>
-            <div>
-                <div class="fl">起止时间：</div>
-                <div class="fl">
-                    <p>2015-09-08 10：08</p>
-                    <p>2015-09-08 11：08</p>
-                </div>
-            </div>
-            <p style="clear: both">订单状态：<span>已完成</span></p>
-            <p>预付金额：<span>5</span>元</p>
-            <a href="" class="btn bg-grey">取消订单</a>
-        </li>
-        <li class="details-box">
-            <h3>订单编号：<span>00009</span></h3>
-            <p>杭州万塘路停车场</p>
-            <div>
-                <div class="fl">起止时间：</div>
-                <div class="fl">
-                    <p>2015-09-08 10：08</p>
-                    <p>2015-09-08 11：08</p>
-                </div>
-            </div>
-            <p style="clear: both">订单状态：<span>已完成</span></p>
-            <p>预付金额：<span>5</span>元</p>
-            <a href="" class="btn bg-grey">取消订单</a>
-        </li>
-        <li class="details-box">
-            <h3>订单编号：<span>00009</span></h3>
-            <p>杭州万塘路停车场</p>
-            <div>
-                <div class="fl">起止时间：</div>
-                <div class="fl">
-                    <p>2015-09-08 10：08</p>
-                    <p>2015-09-08 11：08</p>
-                </div>
-            </div>
-            <p style="clear: both">订单状态：<span>已完成</span></p>
-            <p>预付金额：<span>5</span>元</p>
-            <a href="" class="btn bg-grey">取消订单</a>
-        </li>
-        <li class="details-box">
-            <h3>订单编号：<span>00009</span></h3>
-            <p>杭州万塘路停车场</p>
-            <div>
-                <div class="fl">起止时间：</div>
-                <div class="fl">
-                    <p>2015-09-08 10：08</p>
-                    <p>2015-09-08 11：08</p>
-                </div>
-            </div>
-            <p style="clear: both">订单状态：<span>已完成</span></p>
-            <p>预付金额：<span>5</span>元</p>
-            <a href="" class="btn bg-grey">取消订单</a>
-        </li>
-        <li class="details-box">
-            <h3>订单编号：<span>00009</span></h3>
-            <p>杭州万塘路停车场</p>
-            <div>
-                <div class="fl">起止时间：</div>
-                <div class="fl">
-                    <p>2015-09-08 10：08</p>
-                    <p>2015-09-08 11：08</p>
-                </div>
-            </div>
-            <p style="clear: both">订单状态：<span>已完成</span></p>
-            <p>预付金额：<span>5</span>元</p>
-            <a href="" class="btn bg-grey">取消订单</a>
-        </li>
+    <ul><% 
+    	if(list.isNull(0))
+    		out.print("<li class='details-box'>没有订单记录</li>");
+    	else{
+    		for(int i=0;i<list.length();i++){
+    			JSONObject obj = list.getJSONObject(i);	
+    			
+    			String stateArray[] = {"已取消","未进场","已进场","已完成"};
+    			int state = obj.getInt("state");
+    			String statePark = stateArray[state];
+    			
+    			out.print("<li class='details-box'>");
+    			out.print("<h3>订单编号：<span>"+obj.getLong("xoid")+"</span></h3>");
+    			out.print("<p>"+obj.getString("parkname")+"</p>");
+    			out.print("<div>");
+    			out.print("<div class='fl'>起止时间：</div>");
+    			out.print("<div class='fl'>");
+    			out.print("<p>"+obj.getLong("starttime")+"</p>");
+    			out.print("<p>"+obj.getLong("endtime")+"</p></div></div>");
+    			out.print("<p style='clear: both'>订单状态：<span>"+statePark+"</span></p>");
+    			out.print("<p>预付金额：<span>"+obj.getDouble("prepay")+"</span>元</p>");
+    			out.print("<a href='' class='btn bg-o'>评价停车场</a>");
+    			out.print("</li>");
+    		}  		
+    	}  
+    %>
+        
     </ul>
 </div>
 <!--奇偶数换色-->

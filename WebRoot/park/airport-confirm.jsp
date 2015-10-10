@@ -23,7 +23,7 @@
     <div class="top-bar">
         <a href="javascript:history.back()" class="top-bar-rebtn"></a>
         <h3>确认订单</h3>
-        <a href="park/airport-parklist.jsp" class="login-font">列表</a>
+        <a href="airport-parklist.jsp" class="login-font">列表</a>
     </div>
     <div class="box box-one" >
         <h3>上海双子座停车场</h3>

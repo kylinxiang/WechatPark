@@ -1,4 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"
+	import="java.io.*, javax.servlet.*, org.json.*, xqpark.ParkApi"%>
+	
+<% 
+	JSONObject jsonobj = null;
+	JSONArray list = null;
+	
+	try {
+		String userid = request.getSession().getAttribute("userid").toString();
+		jsonobj = ParkApi.getCollects(userid, "1");
+		list = jsonobj.getJSONArray("list");
+	} catch (JSONException e) {
+		e.printStackTrace();
+	}
+%>
 
 <!DOCTYPE html >
 <html>
@@ -24,52 +38,30 @@
         <a href="javascript:history.back()" class="top-bar-rebtn"></a>
         <h3>我的收藏</h3>
     </div>
-    <ul>
-        <li class="details-box">
-            <div class="box-txt">
-                <div class="icon-box"><i class="icon-id"></i><i class="icon-place"></i><i class="icon-bus"></i></div>
-                <h4 class="font-c">杭州甲虎停车场</h4>
-                <div class="size-small" style="margin: 24px auto 0"><i class="icon-star-4"></i>4.2分 基于50条评价</div>
-                <p class="border-bottom">停车场地址：杭州滨江区江汉路</p>
-                <p>成交量：10</p>
-                <p>室内空车位：100/200</p>
-                <p class="text-nowrap">收费：1天50，2天80，3天100，4天200</p>
-            </div>
-            <div class="box-btn">
-                <img src="../images/icon-no-photo.png">
-                <a class="yd-btn">立即预定</a>
-            </div>
-        </li>
-        <li class="details-box">
-            <div class="box-txt">
-                <div class="icon-box"><i class="icon-id"></i><i class="icon-place"></i><i class="icon-bus"></i></div>
-                <h4 class="font-c">杭州甲虎停车场</h4>
-                <div class="size-small" style="margin: 24px auto 0"><i class="icon-star-4"></i>4.2分 基于50条评价</div>
-                <p class="border-bottom">停车场地址：杭州滨江区江汉路</p>
-                <p>成交量：10</p>
-                <p>室内空车位：100/200</p>
-                <p class="text-nowrap">收费：1天50，2天80，3天100，4天200</p>
-            </div>
-            <div class="box-btn">
-                <img src="../images/icon-no-photo.png">
-                <a class="yd-btn">立即预定</a>
-            </div>
-        </li>
-        <li class="details-box">
-            <div class="box-txt">
-                <div class="icon-box"><i class="icon-id"></i><i class="icon-place"></i><i class="icon-bus"></i></div>
-                <h4 class="font-c">杭州甲虎停车场</h4>
-                <div class="size-small" style="margin: 24px auto 0"><i class="icon-star-4"></i>4.2分 基于50条评价</div>
-                <p class="border-bottom">停车场地址：杭州滨江区江汉路</p>
-                <p>成交量：10</p>
-                <p>室内空车位：100/200</p>
-                <p class="text-nowrap">收费：1天50，2天80，3天100，4天200</p>
-            </div>
-            <div class="box-btn">
-                <img src="../images/icon-no-photo.png">
-                <a class="yd-btn">立即预定</a>
-            </div>
-        </li>
+    <ul><%
+    	if(jsonobj.getInt("count") == 0)
+			out.print("<li class='details-box'>没有订单记录</li>");
+		else{
+			for(int i=0;i<list.length();i++){
+				
+				JSONObject obj = list.getJSONObject(i);	
+				
+				out.print("<li class='details-box'>");
+				out.print("<div class='box-txt'>");
+				out.print("<div class='icon-box'><i class='icon-id'></i><i class='icon-place'></i><i class='icon-bus'></i></div>");
+				out.print("<h4 class='font-c'>"+obj.getString("parkname")+"</h4>");
+				out.print("<div class='size-small' style='margin: 24px auto 0'><i class='icon-star-4'></i>"+obj.getInt("starlevel")+"分</div>");
+				out.print("<p class='border-bottom'>停车场地址："+obj.getString("address")+"</p>");
+				out.print("<p>成交量："+obj.getInt("totalorder")+"</p>");
+				out.print("<p>室内空车位："+obj.getInt("inempty")+"/"+obj.getInt("incount")+"&nbsp;&nbsp;&nbsp;室外空车位："+obj.getInt("outempty")+"/"+obj.getInt("outcount")+"</p>");
+				out.print("<p class='text-nowrap'>收费：室内："+obj.getString("chargeindoor")+"&nbsp;&nbsp;&nbsp;室外："+obj.getString("chargeoutdoor")+"</p></div>");
+				out.print("<div class='box-btn'>");
+				out.print("<img src="+ obj.getString("parkpic") +">");
+				out.print("<a href='airport-Details.jsp' class='yd-btn'>立即预定</a></div></li>");
+			}
+		}   
+    %>
+        
     </ul>
 </div>
 </body>

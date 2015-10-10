@@ -1,4 +1,18 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"
+	import="java.io.*, javax.servlet.*, org.json.*, xqpark.ParkApi"%>
+
+<% 
+	JSONObject jsonobj = null;
+	JSONObject info = null;
+	
+	try {
+		String username = (String) request.getSession().getAttribute("username");
+		jsonobj = ParkApi.getCarOwnerInfo(username);
+		info = jsonobj.getJSONObject("info");
+	} catch (JSONException e) {
+		e.printStackTrace();
+	}
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,42 +35,49 @@
 <div>
     <!--客户头像-->
     <div class="img-center">
-        <a><img src="../images/per_icon.png"></a>
+        <a><img src=<% 
+        	String headurl = info.getString("headurl") ;
+        	System.out.println(headurl);
+    		if(headurl.isEmpty()) 				
+    			out.print("../images/per_icon.png");
+    		else{
+    			out.print(headurl);
+    		}
+        		
+        %>></a>
     </div>
     <!--客户信息-->
     <form class="main">
         <ul>
             <li class="clearfix">
                 <label>昵&nbsp;&nbsp;&nbsp;称</label>
-                <input type="text" placeholder="12312312312" >
+                <label style="float:right"><%=info.getString("nickname") %> </label>
             </li>
             <li class="clearfix">
                 <label>性&nbsp;&nbsp;&nbsp;别</label>
-                <select>
-                    <option>男</option>
-                    <option>女</option>
-                </select>
+                <label style="float:right">
+                <%  
+              		int sex = info.getInt("sex") ;
+                	if(sex == 1)
+                		out.print("男");
+                	else{
+                		out.print("女");
+                	}
+                %> 
+                </label>
             </li>
             <li class="clearfix">
                 <label>出生年月</label>
-                <select>
-                    <option>00后</option>
-                    <option>90后</option>
-                    <option>80后</option>
-                    <option>70后</option>
-                    <option>60后</option>
-                    <option>50后</option>
-                </select>
+                <label style="float:right"><%=info.getString("borth") %> </label>
+                
             </li>
             <li class="clearfix">
                 <label>邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                <input type="email" placeholder="adasda@145.com">
+                <label style="float:right"><%=info.getString("email") %> </label>
             </li>
             <li class="clearfix">
                 <label>车&nbsp;牌&nbsp;号</label>
-                <div>
-                    <input type="text" placeholder="浙C.88888">
-                </div>
+                <label style="float:right"><%=info.getString("platenumber") %> </label>
             </li>
         </ul>
     </form>

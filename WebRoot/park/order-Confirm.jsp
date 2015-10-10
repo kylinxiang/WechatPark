@@ -28,7 +28,7 @@
 <body>
 <!--页面头部-->
 <div class="top-bar">
-    <a href="park/urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
     <h3>订单确认</h3>
     <a href="" class="top-call-back"></a>
 </div>
@@ -82,7 +82,7 @@
     </div>
 
 <div class="btn">
-    <a href="park/order-Details.jsp" class="query-btn" onclick="formsubmit()">确定</a>
+    <a href="order-Details.jsp" class="query-btn" onclick="formsubmit()">确定</a>
 </div>
 
 

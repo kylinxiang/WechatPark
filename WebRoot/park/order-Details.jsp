@@ -16,7 +16,7 @@
 <body>
 <!--页面头部-->
 <div class="top-bar">
-    <a href="park/order-Confirm.jsp" class="top-bar-rebtn"></a>
+    <a href="order-Confirm.jsp" class="top-bar-rebtn"></a>
     <h3>订单详情</h3>
 </div>
 <!--订单编号-->
@@ -53,7 +53,7 @@
 <!--操作按钮-->
 <div class="foot-btn">
     <a href="" class="leave-btn">离场</a>
-    <a href="park/pay-money.jsp" class="pay-btn">补交停车费</a>
+    <a href="pay-money.jsp" class="pay-btn">补交停车费</a>
 </div>
 </body>
 </html>

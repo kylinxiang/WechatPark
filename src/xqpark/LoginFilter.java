@@ -57,12 +57,12 @@ public class LoginFilter implements Filter {
         
          String path = servletRequest.getRequestURI();
          String sessionObj = (String) servletRequest.getSession().getAttribute("sessionKey");
-         System.out.println(sessionObj);
+         //System.out.println(sessionObj);
          
          //String username =  (String)session.getAttribute("username");
          //Boolean isLogin = (Boolean) session.getAttribute("isLogin");
         
-         if(path.indexOf("login.jsp") > -1  || path.indexOf("wechat.do") > -1|| path.indexOf("login.do") > -1) {
+         if(path.indexOf("wechat.do") > -1|| path.indexOf("login.do") > -1) {
              chain.doFilter(request, response);
              return;
          } 

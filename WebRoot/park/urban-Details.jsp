@@ -16,7 +16,7 @@
 <body>
 <!--头部信息-->
 <div class="top-bar">
-    <a href="park/urban-ParkMap.html" class="top-bar-rebtn"></a>
+    <a href="urban-ParkMap.html" class="top-bar-rebtn"></a>
     <h3>停车场详情</h3>
 </div>
 <div class="main">
@@ -58,7 +58,7 @@
 <!--操作按钮-->
 <div class="main-btn clearfix">
     <div>
-        <a href="park/order-Confirm.jsp" class="yd-btn"><span></span>立即预订</a>
+        <a href="order-Confirm.jsp" class="yd-btn"><span></span>立即预订</a>
     </div>
 </div>
 </body>

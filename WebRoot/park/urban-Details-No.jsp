@@ -16,7 +16,7 @@
 <body>
 <!--头部信息-->
 <div class="top-bar">
-    <a href="park/urban-ParkMap.jsp" class="top-bar-rebtn"></a>
+    <a href="urban-ParkMap.jsp" class="top-bar-rebtn"></a>
     <h3>停车场详情</h3>
 </div>
 <div class="main">
@@ -30,7 +30,7 @@
                 <li><a href="" target="_blank"><img src="../images/4.jpg" alt=""></a></li>
             </ul>
         </div>
-        <script type="text/javascript" src="js/yxMobileSlider.js"></script>
+        <script type="text/javascript" src="../js/yxMobileSlider.js"></script>
         <script>
             $(".slider").yxMobileSlider({width:320,height:200,during:3000})
         </script>
